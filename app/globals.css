@@ -1,26 +1,221 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   DESIGN SYSTEM — Premium dark futuristic aesthetic
+   Tailwind v4 CSS-first theme configuration
+   ============================================================ */
+
+@theme {
+  /* ---- Surfaces ---- */
+  --color-void: #050507;
+  --color-ink: #0a0a0f;
+  --color-graphite: #101018;
+  --color-slate: #16161f;
+  --color-line: rgba(255, 255, 255, 0.08);
+
+  /* ---- Text ---- */
+  --color-text-primary: #f4f5f7;
+  --color-text-secondary: #9a9ba7;
+  --color-text-muted: #62636f;
+
+  /* ---- Accents ---- */
+  --color-electric: #3b82f6;
+  --color-cyan: #22d3ee;
+  --color-violet: #8b5cf6;
+  --color-glow: #4f46e5;
+
+  /* ---- Fonts ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-fa: var(--font-vazirmatn), var(--font-inter), sans-serif;
+
+  /* ---- Radii ---- */
+  --radius-xl: 1.5rem;
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Custom animations ---- */
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-grid-pan: grid-pan 30s linear infinite;
+  --animate-spin-slow: spin-slow 22s linear infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes aurora {
+  0% {
+    transform: translate3d(-8%, -4%, 0) rotate(0deg) scale(1.1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate3d(6%, 6%, 0) rotate(12deg) scale(1.25);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-4%, 8%, 0) rotate(-8deg) scale(1.15);
+    opacity: 0.7;
   }
 }
 
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes grid-pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -800px;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-void);
+  color: var(--color-text-primary);
+  font-feature-settings: "ss01", "cv01", "cv11";
+  overflow-x: hidden;
+}
+
+/* Persian / RTL typography */
+[dir="rtl"] * {
+  font-family: var(--font-fa) !important;
+}
+
+[dir="rtl"] div.text-left {
+  text-align: start;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] p,
+[dir="rtl"] {
+  text-align: right;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-electric) 40%, transparent);
+  color: #fff;
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(
+    in oklab,
+    var(--color-electric) 30%,
+    var(--color-graphite)
+  );
+  border-radius: 9999px;
+  border: 2px solid var(--color-void);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(
+    in oklab,
+    var(--color-electric) 55%,
+    var(--color-graphite)
+  );
+}
+
+/* ============================================================
+   REUSABLE UTILITIES
+   ============================================================ */
+
+/* Subtle film-grain noise overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* Technical grid */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-text-primary) 0%,
+    var(--color-cyan) 45%,
+    var(--color-violet) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Radial fade mask (fades edges) */
+.mask-radial {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 40%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 78%);
+}
+
+/* Glass panel */
+.glass {
+  background: color-mix(in oklab, var(--color-graphite) 60%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--color-line);
+}
+
+/* Accessibility: honour reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
