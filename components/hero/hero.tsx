@@ -14,7 +14,7 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/ui/text-reveal";
 import { STACK } from "@/lib/content";
 import { useDictionary } from "@/lib/i18n/context";
-import GlitchCanvas from "../GlitchCanvas";
+import GlitchCanvas from "../ui/GlitchCanvas";
 
 export function Hero() {
   const { hero, profile } = useDictionary();

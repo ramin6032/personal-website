@@ -82,6 +82,55 @@ export type Dictionary = {
       highlights: string[];
     }[];
   };
+  work: {
+    /** Copy for the /work index page. */
+    index: {
+      eyebrow: string;
+      title: string;
+      lede: string;
+      /** Small caption above each card's "read case study" affordance. */
+      viewLabel: string;
+      /** Back-to-home link on the index. */
+      backHome: string;
+    };
+    /** Shared labels reused across every case-study page. */
+    labels: {
+      backToWork: string;
+      overview: string;
+      challenge: string;
+      role: string;
+      features: string;
+      architecture: string;
+      techStack: string;
+      impact: string;
+      role_intro: string;
+      nextProject: string;
+      period: string;
+      liveNote: string;
+    };
+    /** One entry per project, in the same order as content.ts `WORK`. */
+    items: {
+      slug: string;
+      name: string;
+      /** Short one-liner shown under the title in hero + cards. */
+      tagline: string;
+      overview: string;
+      challenge: {
+        intro: string;
+        points: string[];
+      };
+      role: {
+        intro: string;
+        responsibilities: string[];
+      };
+      features: {
+        title: string;
+        items: string[];
+      }[];
+      architecture: string[];
+      impact: string[];
+    }[];
+  };
   achievements: {
     eyebrow: string;
     title: string;

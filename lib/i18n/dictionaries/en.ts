@@ -268,8 +268,303 @@ const en: Dictionary = {
       },
     ],
   },
+  work: {
+    index: {
+      eyebrow: "Case studies",
+      title: "Selected work, told in full",
+      lede: "A closer look at the enterprise platforms I've architected and shipped — the business problem, my role, the engineering decisions, and the impact each one delivered.",
+      viewLabel: "Read the case study",
+      backHome: "Back to home",
+    },
+    labels: {
+      backToWork: "All case studies",
+      overview: "Overview",
+      challenge: "The business challenge",
+      role: "My role",
+      features: "Key features",
+      architecture: "Architecture & technical decisions",
+      techStack: "Technology stack",
+      impact: "Impact",
+      role_intro: "What I owned end to end",
+      nextProject: "Next case study",
+      period: "Timeline",
+      liveNote:
+        "Built for an internal ISP environment — screens are representative of the shipped product.",
+    },
+    items: [
+      {
+        slug: "isp-customer-self-service",
+        name: "ISP Customer Self-Service Platform",
+        tagline:
+          "A unified digital experience for 18,000+ subscribers to purchase, manage and support their internet services — without ever calling support.",
+        overview:
+          "A customer self-service platform designed to transform the way subscribers interact with ISP services by providing a unified digital experience for purchasing, managing, and supporting internet services. The platform serves 18,000+ active subscribers and lets customers independently manage their services without relying on traditional support channels. It combines digital sales, service management, customer support, engagement features, and personalized experiences within a single scalable web application.",
+        challenge: {
+          intro:
+            "Before the platform, many customer interactions — renewals, purchases and support requests — depended on manual processes and direct communication with support teams. The goal was a modern, responsive, scalable platform that automates customer interactions while improving experience and operational efficiency.",
+          points: [
+            "High dependency on customer support channels for routine requests.",
+            "Limited visibility into customer behavior and engagement.",
+            "Time-consuming manual operations for common service requests.",
+            "Lack of a unified digital experience across customer journeys.",
+          ],
+        },
+        role: {
+          intro:
+            "As the Frontend Engineer, I designed and implemented the frontend architecture, developed the core application workflows, and collaborated with backend teams to deliver a production-ready platform.",
+          responsibilities: [
+            "Designing a scalable frontend architecture with Next.js and React.",
+            "Implementing customer-facing workflows and complex business processes.",
+            "Improving application performance, maintainability, and user experience.",
+            "Integrating frontend features with backend services and APIs.",
+            "Designing reusable components and establishing frontend development patterns.",
+          ],
+        },
+        features: [
+          {
+            title: "Digital Service Management",
+            items: [
+              "Online service purchasing and renewal workflows.",
+              "Customer account management.",
+              "Service status tracking and reporting.",
+            ],
+          },
+          {
+            title: "Customer Support Workflows",
+            items: [
+              "Digital support request submission.",
+              "Customer communication workflows.",
+              "Request tracking and status visibility.",
+            ],
+          },
+          {
+            title: "Customer Engagement Platform",
+            items: [
+              "Loyalty programs.",
+              "Customer surveys.",
+              "Promotional campaigns.",
+              "Personalized recommendation features.",
+            ],
+          },
+          {
+            title: "Web Push Notification System",
+            items: [
+              "Browser-based push notification delivery.",
+              "Subscription management.",
+              "Notification status tracking.",
+              "Delivery analytics and reporting.",
+            ],
+          },
+        ],
+        architecture: [
+          "Implemented a Next.js SSR architecture to improve performance and SEO.",
+          "Adopted Progressive Web App (PWA) capabilities for an app-like experience without installation.",
+          "Designed reusable UI components to improve development speed and consistency.",
+          "Applied client-side state management patterns for complex application workflows.",
+          "Integrated analytics and monitoring for better visibility into user interactions.",
+        ],
+        impact: [
+          "Enabled more than 18,000 subscribers to manage their services through a unified digital platform.",
+          "Reduced dependency on manual support processes by introducing self-service workflows.",
+          "Improved customer engagement through personalized communication and notification systems.",
+          "Established a scalable frontend foundation for future business capabilities.",
+        ],
+      },
+      {
+        slug: "enterprise-operations-automation",
+        name: "Enterprise Operations & Business Process Automation Platform",
+        tagline:
+          "A rule-driven platform that watches operational data, catches anomalies, and launches the right workflow automatically.",
+        overview:
+          "An enterprise platform that unified operational monitoring, financial compliance, incident management, and business process automation. It continuously evaluated operational data against organizational rules, automatically detected anomalies, and initiated standardized workflows to streamline issue resolution across departments.",
+        challenge: {
+          intro:
+            "Operational and financial oversight was fragmented across departments, relying on manual checks that were slow to catch discrepancies and inconsistent in how issues were escalated and resolved.",
+          points: [
+            "Manual reconciliation between internal records and banking transactions.",
+            "No unified view of operational compliance across teams.",
+            "Slow, inconsistent incident escalation and resolution.",
+            "Field activities and reports scattered across disconnected channels.",
+          ],
+        },
+        role: {
+          intro:
+            "I designed and developed the frontend platform and the operational tooling around it, working closely with backend teams on the rule engine and integrations.",
+          responsibilities: [
+            "Designing the frontend architecture for monitoring and automation dashboards.",
+            "Building the rule-engine UI for validating financial and operational data.",
+            "Developing the incident management and investigation workflow interfaces.",
+            "Creating the internal field-operations application and collaboration tools.",
+          ],
+        },
+        features: [
+          {
+            title: "Monitoring & Compliance",
+            items: [
+              "Rule engine validating financial and operational data against policies.",
+              "Automated reconciliation between internal records and banking transactions.",
+              "Continuous operational monitoring with anomaly detection.",
+            ],
+          },
+          {
+            title: "Incident Management",
+            items: [
+              "Automatic case generation on detected anomalies.",
+              "Standardized investigation workflows.",
+              "Cross-department issue tracking and resolution.",
+            ],
+          },
+          {
+            title: "Field Operations",
+            items: [
+              "Service provisioning and fault management.",
+              "Feasibility surveys and field activity tracking.",
+              "Voice-based daily reports and operational forms.",
+              "Equipment checklists and machinery usage tracking.",
+            ],
+          },
+        ],
+        architecture: [
+          "Built a scalable frontend for data-dense monitoring and automation views.",
+          "Designed a rule-engine interface to express and evaluate business policies.",
+          "Implemented workflow-driven UI that reacts to backend-detected events.",
+          "Integrated operational tooling for field teams and cross-team collaboration.",
+        ],
+        impact: [
+          "Automated operational monitoring and financial reconciliation across departments.",
+          "Reduced manual oversight by auto-initiating investigation workflows.",
+          "Improved operational visibility and coordination between teams.",
+          "Standardized incident handling from detection to resolution.",
+        ],
+      },
+      {
+        slug: "financial-tax-integration",
+        name: "Financial Transaction Processing Platform",
+        tagline:
+          "A reliable pipeline that submits financial transactions to Iran's National Tax System and tracks every one to completion.",
+        overview:
+          "A transaction processing platform responsible for submitting financial transactions to Iran's National Tax System while tracking every transaction throughout its lifecycle. It ensured delivery reliability, detected processing failures, and provided complete operational visibility for exception handling and resubmission.",
+        challenge: {
+          intro:
+            "Submitting financial transactions to a national tax authority demands reliability and traceability — a single lost or failed submission can create compliance and reconciliation problems that are hard to unwind.",
+          points: [
+            "Government tax APIs required precise, reliable submission handling.",
+            "Every transaction needed traceability throughout its lifecycle.",
+            "Failed or pending transactions needed detection and recovery.",
+            "Operations teams needed visibility into processing status.",
+          ],
+        },
+        role: {
+          intro:
+            "I designed and developed the frontend and operational dashboards, and collaborated on the integration and retry logic with the backend.",
+          responsibilities: [
+            "Building the submission and tracking interfaces for financial transactions.",
+            "Developing operational dashboards for status monitoring and analytics.",
+            "Designing error-reporting and retry workflow interfaces.",
+            "Integrating with government tax APIs through backend services.",
+          ],
+        },
+        features: [
+          {
+            title: "Transaction Processing",
+            items: [
+              "Automated submission through government tax APIs.",
+              "End-to-end tracking using unique tracking identifiers.",
+              "Lifecycle management from submission to completion.",
+            ],
+          },
+          {
+            title: "Reliability & Recovery",
+            items: [
+              "Monitoring and error reporting for every transaction.",
+              "Retry workflows for failed or pending transactions.",
+              "Exception handling and resubmission support.",
+            ],
+          },
+          {
+            title: "Operational Visibility",
+            items: [
+              "Dashboards for transaction status monitoring.",
+              "Processing analytics and reliability reporting.",
+            ],
+          },
+        ],
+        architecture: [
+          "Designed a reliable submission and tracking flow around government tax APIs.",
+          "Implemented end-to-end tracking with unique identifiers per transaction.",
+          "Built monitoring, error reporting and retry workflows for resilience.",
+          "Developed operational dashboards for status and processing analytics.",
+        ],
+        impact: [
+          "Automated submission of financial transactions to the national tax system.",
+          "Guaranteed traceability for every transaction until completion.",
+          "Reduced failed submissions through detection and retry workflows.",
+          "Gave operations teams full visibility into processing reliability.",
+        ],
+      },
+      {
+        slug: "greenhouse-erp",
+        name: "Greenhouse Business Management Platform",
+        tagline:
+          "A custom ERP that centralized sales, inventory, finance, logistics and CRM into one operational system.",
+        overview:
+          "A custom ERP solution that centralized the company's core business operations into a single platform. The system integrated sales, inventory, finance, logistics, and customer management, providing real-time operational visibility and reducing manual processes through workflow automation.",
+        challenge: {
+          intro:
+            "Core business operations were spread across disconnected tools and manual processes, making it hard to get a real-time picture of the business and keep data consistent across departments.",
+          points: [
+            "Sales, inventory, finance and logistics lived in separate systems.",
+            "Manual processes slowed operations and introduced inconsistencies.",
+            "No real-time operational visibility for decision-making.",
+            "Reporting was fragmented and time-consuming to assemble.",
+          ],
+        },
+        role: {
+          intro:
+            "I led the design and development end to end — from architecture and data model to implementation and deployment.",
+          responsibilities: [
+            "Designing the overall application architecture and relational data model.",
+            "Developing integrated modules across the business domains.",
+            "Building management dashboards and analytical reporting tools.",
+            "Automating key business workflows for efficiency and consistency.",
+          ],
+        },
+        features: [
+          {
+            title: "Integrated Modules",
+            items: [
+              "Sales and customer management (CRM).",
+              "Inventory and logistics.",
+              "Finance and accounting.",
+            ],
+          },
+          {
+            title: "Insight & Automation",
+            items: [
+              "Management dashboards and analytical reporting.",
+              "Automated business workflows.",
+              "Real-time operational visibility.",
+            ],
+          },
+        ],
+        architecture: [
+          "Designed the overall application architecture and relational database model.",
+          "Developed integrated modules for sales, inventory, finance, logistics and CRM.",
+          "Built management dashboards and analytical reporting tools.",
+          "Automated key business workflows to improve efficiency and data consistency.",
+        ],
+        impact: [
+          "Centralized core business operations into a single platform.",
+          "Reduced manual processes through workflow automation.",
+          "Delivered real-time operational visibility for decision-making.",
+          "Improved data consistency across all business domains.",
+        ],
+      },
+    ],
+  },
   achievements: {
     eyebrow: "Highlights",
+
     title: "Impact delivered through engineering",
     lede: "A selection of measurable outcomes and engineering milestones achieved through building scalable platforms for real business operations.",
     educationLabel: "Education",

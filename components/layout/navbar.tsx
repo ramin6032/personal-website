@@ -43,7 +43,7 @@ export function Navbar() {
           className="group flex items-center gap-2 text-sm font-semibold tracking-tight"
         >
           <span className="relative flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold">
-            <Image src={"./logo-indigo.svg"} fill alt="logo" />
+            <Image src={"./logo-indigo.svg"} fill alt="logo" loading="eager" />
           </span>
         </a>
 

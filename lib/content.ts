@@ -37,13 +37,6 @@ export const PROFILE = {
   },
 } as const;
 
-/** Headline stats shown in the hero — all grounded in the real data. */
-export const STATS = [
-  { value: "6+", label: "Years engineering" },
-  { value: "18K+", label: "Users served" },
-  { value: "5+", label: "Enterprise platforms" },
-] as const;
-
 /** Tech ticker under the hero. */
 export const STACK = [
   "Next.js",
@@ -55,208 +48,114 @@ export const STACK = [
 ] as const;
 
 /* ------------------------------------------------------------------ *
- * ABOUT
+ * WORK — locale-invariant case-study metadata.
+ *
+ * The translated narrative (overview, challenge, role, features…) lives in
+ * the dictionaries under `work.items`, matched to these entries by `slug`.
+ * Everything here is language-neutral: slugs, periods, tech tokens, metric
+ * values, accent theming and optional media. Keep this array in the same
+ * order as `projects.items` / `work.items` in every dictionary.
  * ------------------------------------------------------------------ */
 
-export const ABOUT = {
-  title: "I turn complex business problems into clean, durable software",
-  lede: "Frontend Software Engineer with 6+ years designing and building enterprise web applications — from customer self-service platforms to financial and operational systems used by thousands.",
-  paragraphs: [
-    "My core is Next.js, React and TypeScript, where I focus on scalable, high-performance architecture with a long view on maintainability. I've built business-critical platforms across customer self-service, enterprise operations, financial transaction processing, workflow automation and tax integration.",
-    "Although frontend is my home, I work comfortably across the backend with Node.js — designing REST APIs, integrating external services, automating workflows and shipping CI/CD pipelines with GitHub Actions and Docker. That full-stack perspective lets me design frontends that align naturally with backend capabilities and real business requirements.",
-  ],
-  principles: [
-    {
-      title: "Enterprise frontend architecture",
-      body: "Scalable, typed, SSR-ready React systems designed to grow with the business rather than fight it.",
-    },
-    {
-      title: "Built for real operations",
-      body: "Platforms that support live business processes and thousands of users — reliability and clean system design are non-negotiable.",
-    },
-    {
-      title: "Engineer-friendly by design",
-      body: "Maintainable code and strong developer experience, so the product stays enjoyable to build on long after launch.",
-    },
-  ],
-  focusAreas: [
-    "Enterprise Frontend Architecture",
-    "Large-Scale React Applications",
-    "Complex Business Workflows",
-    "Financial & Operational Systems",
-    "Performance Optimization",
-    "Progressive Web Apps (PWA)",
-    "System Design",
-    "Developer Experience",
-  ],
-} as const;
+export type WorkMedia =
+  | { type: "image"; src: string; alt?: string }
+  | { type: "video"; src: string; poster?: string };
 
-/* ------------------------------------------------------------------ *
- * SKILLS — grouped how an engineer thinks about them.
- * ------------------------------------------------------------------ */
-
-export const SKILL_GROUPS = [
+export const WORK = [
   {
-    label: "Core Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript (ES2023+)",
-      "SSR & PWA",
-    ],
-  },
-  {
-    label: "UI & Experience",
-    skills: [
-      "Design Systems",
-      "Accessibility",
-      "Motion / GSAP",
-      "Responsive UI",
-      "Performance",
-    ],
-  },
-  {
-    label: "Backend & APIs",
-    skills: [
-      "Node.js",
-      "REST APIs",
-      "Authentication",
-      "External Integrations",
-      "Logging",
-    ],
-  },
-  {
-    label: "Platform & DevOps",
-    skills: ["GitHub Actions", "Docker", "CI/CD", "Containerized Deploys"],
-  },
-  {
-    label: "Engineering",
-    skills: [
-      "System Design",
-      "Frontend Architecture",
-      "Workflow Automation",
-      "Maintainability",
-    ],
-  },
-] as const;
-
-/* ------------------------------------------------------------------ *
- * EXPERIENCE
- * ------------------------------------------------------------------ */
-
-export const EXPERIENCE = [
-  {
-    period: "Apr 2020 — Mar 2026",
-    duration: "6 yrs",
-    role: "Frontend Software Engineer",
-    org: "Kashan Persia System",
-    type: "Full-time · On-site",
-    location: "Isfahan Province, Iran",
-    summary:
-      "Designed and developed enterprise web applications across customer-facing and internal operations for an ISP delivering broadband and enterprise solutions to thousands of subscribers.",
-    highlights: [
-      "Built a customer self-service platform serving 18,000+ active subscribers — digital sales, service renewals, support and engagement.",
-      "Designed enterprise frontend architectures with Next.js, React and TypeScript, using SSR and PWA capabilities.",
-      "Developed a complete Web Push Notification platform with subscription management, delivery tracking, reporting and engagement analytics.",
-      "Built financial transaction systems integrated with national tax infrastructure — automated submission, tracking and failure recovery.",
-      "Designed workflow-driven apps for operational monitoring, incident management and cross-team collaboration.",
-      "Built internal business platforms spanning CRM, field operations, inventory, logistics and reporting.",
-      "Collaborated on Node.js backend services — REST APIs, authentication, logging and external integrations.",
-      "Implemented CI/CD with GitHub Actions and containerized deployments with Docker.",
-    ],
-  },
-] as const;
-
-/* ------------------------------------------------------------------ *
- * PROJECTS
- * ------------------------------------------------------------------ */
-
-export const PROJECTS = [
-  {
-    name: "ISP Customer Self-Service Platform",
+    slug: "isp-customer-self-service",
+    /** Theme accent — maps to a gradient in the case-study UI. */
+    accent: "electric",
     period: "May 2025 – Sep 2025",
-    tag: "Next.js · SSR · PWA",
-    metric: "18K+ users",
-    summary:
-      "A unified web application for digital sales, service renewals, customer support and engagement.",
-    highlights: [
-      "Built scalable SSR/PWA architecture with Next.js and React.",
-      "Developed self-service workflows for purchases, renewals, support and reporting.",
-      "Implemented a Web Push Notification platform with delivery tracking and analytics.",
-      "Shipped engagement features: loyalty programs, surveys, campaigns and recommendations.",
+    /** Headline numbers shown in the case-study hero + impact rail. */
+    metrics: [
+      { value: "18K+", label: "Active subscribers" },
+      { value: "1", label: "Unified platform" },
+      { value: "PWA", label: "App-like delivery" },
     ],
+    /** Grouped tech — category headings stay in English (technical terms). */
+    tech: [
+      {
+        label: "Frontend",
+        items: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "React Query",
+          "Redux",
+          "Ant Design",
+          "Tailwind CSS",
+        ],
+      },
+      { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
+      { label: "Infrastructure", items: ["Docker", "GitHub Actions"] },
+      { label: "PWA", items: ["Workbox", "Web Push API"] },
+    ],
+    /** Real screenshots/video go here; empty → a generated signature visual. */
+    media: [] as WorkMedia[],
   },
   {
-    name: "Enterprise Operations & Compliance Platform",
+    slug: "enterprise-operations-automation",
+    accent: "cyan",
     period: "Oct 2024 – Dec 2024",
-    tag: "Workflow Automation",
-    metric: "Rule engine",
-    summary:
-      "Automated operational monitoring, compliance validation, incident management and workflow automation across financial and technical departments.",
-    highlights: [
-      "Built a rule engine monitoring operational and financial data against business policies.",
-      "Developed automated financial reconciliation to detect transaction discrepancies.",
-      "Designed an incident system that auto-initiated workflows on detected anomalies.",
-      "Built a field operations app: provisioning, fault management, surveys and voice reports.",
+    metrics: [
+      { value: "Rule engine", label: "Policy validation" },
+      { value: "Auto", label: "Incident workflows" },
+      { value: "24/7", label: "Operational monitoring" },
     ],
+    tech: [
+      {
+        label: "Frontend",
+        items: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "React Query",
+          "Tailwind CSS",
+        ],
+      },
+      { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
+      { label: "Infrastructure", items: ["Docker", "GitHub Actions"] },
+    ],
+    media: [] as WorkMedia[],
   },
   {
-    name: "Financial Transaction & Tax Integration Platform",
+    slug: "financial-tax-integration",
+    accent: "violet",
     period: "Feb 2024 – Apr 2024",
-    tag: "Fintech · Integration",
-    metric: "National tax",
-    summary:
-      "Automated submission, tracking and lifecycle management of financial transactions integrated with Iran's National Tax System (Samaneh Moadian).",
-    highlights: [
-      "Automated submission of financial transactions to the national tax platform.",
-      "Designed end-to-end tracking for every transaction until completion.",
-      "Built error detection and retry workflows for failed or pending transactions.",
-      "Developed operational dashboards for processing status and reliability.",
+    metrics: [
+      { value: "National", label: "Tax integration" },
+      { value: "End-to-end", label: "Transaction tracking" },
+      { value: "Retry", label: "Failure recovery" },
     ],
+    tech: [
+      {
+        label: "Frontend",
+        items: ["Next.js", "React", "TypeScript", "React Query"],
+      },
+      { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
+      { label: "Infrastructure", items: ["Docker", "GitHub Actions"] },
+    ],
+    media: [] as WorkMedia[],
   },
   {
-    name: "Greenhouse Business Management Platform",
+    slug: "greenhouse-erp",
+    accent: "glow",
     period: "Jan 2021 – May 2021",
-    tag: "Custom ERP",
-    metric: "End-to-end",
-    summary:
-      "Owned the full lifecycle of a custom ERP — from requirements and architecture to implementation and deployment.",
-    highlights: [
-      "Designed the overall application architecture and database model.",
-      "Built integrated modules for sales, inventory, finance, logistics and CRM.",
-      "Developed reporting dashboards for business insight and operational visibility.",
-      "Automated key business processes to improve efficiency and data consistency.",
+    metrics: [
+      { value: "End-to-end", label: "Ownership" },
+      { value: "5", label: "Integrated modules" },
+      { value: "Custom", label: "ERP architecture" },
     ],
+    tech: [
+      { label: "Frontend", items: ["React", "JavaScript", "Ant Design"] },
+      { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
+    ],
+    media: [] as WorkMedia[],
   },
 ] as const;
 
-/* ------------------------------------------------------------------ *
- * PROCESS — how I work (used by the pinned showcase).
- * ------------------------------------------------------------------ */
-
-export const PROCESS = [
-  {
-    step: "01",
-    title: "Understand the business",
-    body: "Start from the operational reality and the users. Pin down the workflows and constraints that actually matter before designing a system.",
-  },
-  {
-    step: "02",
-    title: "Architect for scale",
-    body: "Design typed, composable frontends with SSR/PWA where it counts — structured to grow with the product, not against it.",
-  },
-  {
-    step: "03",
-    title: "Engineer the details",
-    body: "Motion, accessibility, performance and edge cases. Build backend integrations that align cleanly with the frontend architecture.",
-  },
-  {
-    step: "04",
-    title: "Ship & automate",
-    body: "Containerized deploys and CI/CD with GitHub Actions and Docker, then monitor and iterate. Reliability is a habit, not a checklist.",
-  },
-] as const;
+export type WorkAccent = (typeof WORK)[number]["accent"];
 
 /* ------------------------------------------------------------------ *
  * EDUCATION / CERTIFICATIONS / ACHIEVEMENTS
