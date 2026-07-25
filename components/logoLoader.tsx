@@ -9,12 +9,10 @@ interface LogoLoaderProps {
 export default function LogoLoader({ onComplete }: LogoLoaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
-  const [showSecondSection, setShowSecondSection] = useState(false);
 
   useEffect(() => {
     const timeline = async () => {
       await new Promise((resolve) => setTimeout(resolve, 2750));
-      setShowSecondSection(true);
 
       await new Promise((resolve) => setTimeout(resolve, 850));
       setIsVisible(false);
@@ -27,7 +25,7 @@ export default function LogoLoader({ onComplete }: LogoLoaderProps) {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[999] overflow-hidden">
+    <div className="fixed inset-0 z-999 overflow-hidden">
       <div
         className="absolute inset-0 z-10 pointer-events-none bg-indigo-500"
         style={{

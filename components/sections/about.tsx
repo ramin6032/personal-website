@@ -72,11 +72,11 @@ export function About() {
                 <div className="absolute -left-8 -top-8 h-32 w-32 rounded-full bg-violet/20 blur-3xl" />
                 <div className="grid grid-cols-3 gap-4">
                   {hero.stats.map((s) => (
-                    <div key={s.label}>
-                      <p className="font-[family-name:var(--font-geist)] text-3xl font-semibold text-gradient">
+                    <div key={s.label} dir="ltr">
+                      <p className="font-(family-name:--font-geist) text-center text-3xl font-semibold text-gradient">
                         {s.value}
                       </p>
-                      <p className="mt-1 text-xs leading-snug text-text-muted">
+                      <p className="mt-1 text-center text-xs leading-snug text-text-muted">
                         {s.label}
                       </p>
                     </div>

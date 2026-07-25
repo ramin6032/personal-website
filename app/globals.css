@@ -114,7 +114,8 @@ body {
 }
 
 /* Persian / RTL typography */
-[dir="rtl"] * {
+[dir="rtl"] *,
+nav li button span {
   font-family: var(--font-fa) !important;
 }
 

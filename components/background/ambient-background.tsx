@@ -28,9 +28,9 @@ export function AmbientBackground({
       {/* Aurora mesh blobs */}
       {aurora && (
         <>
-          <div className="absolute -left-[10%] top-[-15%] h-[55vh] w-[55vh] rounded-full bg-electric/25 blur-[120px] [animation:var(--animate-aurora)]" />
-          <div className="absolute right-[-8%] top-[10%] h-[50vh] w-[50vh] rounded-full bg-violet/25 blur-[130px] [animation:var(--animate-aurora)] [animation-delay:-6s]" />
-          <div className="absolute bottom-[-20%] left-[30%] h-[45vh] w-[45vh] rounded-full bg-cyan/20 blur-[120px] [animation:var(--animate-aurora)] [animation-delay:-11s]" />
+          <div className="absolute left-[-10%] top-[-15%] h-[55vh] w-[55vh] rounded-full bg-electric/25 blur-[120px] animate-aurora" />
+          <div className="absolute right-[-8%] top-[10%] h-[50vh] w-[50vh] rounded-full bg-violet/25 blur-[130px] animate-aurora [animation-delay:-6s]" />
+          <div className="absolute bottom-[-20%] left-[30%] h-[45vh] w-[45vh] rounded-full bg-cyan/20 blur-[120px] animate-aurora [animation-delay:-11s]" />
         </>
       )}
 
@@ -43,7 +43,7 @@ export function AmbientBackground({
       <div className="bg-noise absolute inset-0 opacity-[0.035] mix-blend-overlay" />
 
       {/* Bottom fade into page */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-void" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent to-void" />
     </div>
   );
 }

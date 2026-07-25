@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -13,8 +12,9 @@ import { AmbientBackground } from "@/components/background/ambient-background";
 import { ParticleField } from "@/components/background/particle-field";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/ui/text-reveal";
-import { PROFILE, STACK } from "@/lib/content";
+import { STACK } from "@/lib/content";
 import { useDictionary } from "@/lib/i18n/context";
+import GlitchCanvas from "../GlitchCanvas";
 
 export function Hero() {
   const { hero, profile } = useDictionary();
@@ -28,10 +28,10 @@ export function Hero() {
   const sy = useSpring(py, { stiffness: 60, damping: 18, mass: 0.6 });
 
   // Parallax depth layers
-  const portraitX = useTransform(sx, [-0.5, 0.5], [-22, 22]);
-  const portraitY = useTransform(sy, [-0.5, 0.5], [-16, 16]);
-  const portraitRotX = useTransform(sy, [-0.5, 0.5], [8, -8]);
-  const portraitRotY = useTransform(sx, [-0.5, 0.5], [-10, 10]);
+  // const portraitX = useTransform(sx, [-0.5, 0.5], [-22, 22]);
+  // const portraitY = useTransform(sy, [-0.5, 0.5], [-16, 16]);
+  // const portraitRotX = useTransform(sy, [-0.5, 0.5], [8, -8]);
+  // const portraitRotY = useTransform(sx, [-0.5, 0.5], [-10, 10]);
   const haloX = useTransform(sx, [-0.5, 0.5], [30, -30]);
   const haloY = useTransform(sy, [-0.5, 0.5], [24, -24]);
   const glowX = useTransform(sx, [-0.5, 0.5], [-40, 40]);
@@ -48,10 +48,10 @@ export function Hero() {
     <section
       ref={sectionRef}
       onMouseMove={handlePointer}
-      className="relative flex min-h-[100svh] w-full items-center overflow-hidden px-6 pt-28 pb-16 sm:px-10 lg:px-16"
+      className="relative flex min-h-svh w-full items-center overflow-hidden px-6 pt-28 pb-16 sm:px-10 lg:px-16"
     >
       <AmbientBackground />
-      <div className="pointer-events-none absolute inset-0 -z-[5]">
+      <div className="pointer-events-none absolute inset-0 z-[-5]">
         <ParticleField />
       </div>
 
@@ -71,7 +71,7 @@ export function Hero() {
             {profile.availability}
           </motion.div>
 
-          <h1 className="font-[family-name:var(--font-geist)] text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="font-(family-name:--font-geist) text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             <TextReveal text={hero.titleLine1} delay={0.15} />
             <br />
             <span className="text-gradient">
@@ -103,7 +103,7 @@ export function Hero() {
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </a>
             </Magnetic>
 
@@ -125,10 +125,10 @@ export function Hero() {
             className="mt-12 grid max-w-md grid-cols-3 gap-6 lg:mx-0"
           >
             {hero.stats.map((s) => (
-              <div key={s.label} className="text-center lg:text-start">
+              <div key={s.label} className="text-center " dir="ltr">
                 <dt className="sr-only">{s.label}</dt>
                 <dd>
-                  <span className="block font-[family-name:var(--font-geist)] text-3xl font-semibold text-text-primary">
+                  <span className="block font-(family-name:--font-geist) text-3xl font-semibold text-text-primary">
                     {s.value}
                   </span>
                   <span className="mt-1 block text-xs text-text-muted">
@@ -143,7 +143,7 @@ export function Hero() {
         {/* -------- Right: portrait composition -------- */}
         <div className="relative order-1 flex items-center justify-center lg:order-2">
           <div
-            className="relative flex aspect-[3/4] w-[280px] items-end justify-center sm:w-[340px] lg:w-[420px]"
+            className="relative flex aspect-3/4 w-70 items-end justify-center sm:w-85 lg:w-105"
             style={{ perspective: 1200 }}
           >
             {/* Ambient glow that follows cursor */}
@@ -159,12 +159,22 @@ export function Hero() {
             <motion.div
               aria-hidden
               style={{ x: haloX, y: haloY }}
-              className="absolute inset-0 -z-10 flex items-center justify-center"
+              className="absolute inset-0 z-10 flex items-center justify-center"
             >
               <div className="relative h-[86%] w-[86%]">
-                <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] [animation:var(--animate-spin-slow)]" />
-                <div className="absolute inset-[3px] rounded-full bg-void/80 backdrop-blur-sm" />
-                <div className="absolute inset-0 rounded-full border border-white/10" />
+                <div className=" absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] animate-spin-slow" />
+                <div className="absolute  inset-0.75 rounded-full bg-void/80 backdrop-blur-sm overflow-hidden ">
+                  {/* Active Portrait */}
+                  <div className="relative rtl:left-8 ltr:right-8">
+                    <GlitchCanvas
+                      width={410}
+                      height={660}
+                      isActive={true}
+                      imageUrl={"/portrait.png"}
+                    />
+                  </div>
+                </div>
+                <div className="absolute inset-0 rounded-full border border-white/10 " />
               </div>
             </motion.div>
 
@@ -173,12 +183,12 @@ export function Hero() {
               aria-hidden
               className="absolute inset-0 -z-10 flex items-center justify-center"
             >
-              <div className="h-[104%] w-[104%] rounded-full border border-cyan/20 [animation:var(--animate-spin-slow)] [animation-duration:34s]" />
-              <div className="absolute h-[118%] w-[118%] rounded-full border border-violet/10 [animation:var(--animate-spin-slow)] [animation-direction:reverse] [animation-duration:46s]" />
+              <div className="h-[104%] w-[104%] rounded-full border border-cyan/20 animate-spin-slow [animation-duration:34s]" />
+              <div className="absolute h-[118%] w-[118%] rounded-full border border-violet/10 animate-spin-slow [animation-direction:reverse] [animation-duration:46s]" />
             </div>
 
-            {/* Portrait */}
-            <motion.div
+            {/* DisabledPortrait */}
+            {/* <motion.div
               style={{
                 x: portraitX,
                 y: portraitY,
@@ -193,37 +203,40 @@ export function Hero() {
                 delay: 0.3,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="relative z-10 h-full w-full"
+              className="relative z-10 h-full w-full overflow-hidden"
             >
-              <div className="relative h-full w-full [animation:var(--animate-float-slow)]">
-                <Image
+              <div className="relative h-full w-full [animation:var(--animate-float-slow)] overflow-hidden">
+                {/* <Image
                   src="/portrait.png"
                   alt={`${PROFILE.name} — ${profile.role}`}
                   fill
                   priority
                   sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
                   className="object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
-                />
-                {/* Rim / key light */}
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
-              </div>
-            </motion.div>
+                /> */}
+
+            {/* Rim / key light */}
+            {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
+              </div> */}
+            {/* </motion.div> */}
 
             {/* Floating tech chips */}
             <FloatingChip
               className="left-[-8%] top-[18%]"
               delay={1.3}
-              label="TypeScript"
+              label="Next.js · TypeScript"
             />
+
             <FloatingChip
               className="right-[-10%] top-[38%]"
               delay={1.5}
-              label="SSR · PWA"
+              label="Enterprise Systems"
             />
+
             <FloatingChip
-              className="bottom-[14%] left-[-4%]"
+              className="bottom-[14%] left-[-4%] "
               delay={1.7}
-              label="18K+ users"
+              label="+18k Users"
             />
 
             {/* Ground reflection */}
@@ -286,7 +299,7 @@ function FloatingChip({
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       className={`glass absolute z-20 rounded-xl px-3 py-2 text-xs font-medium text-text-secondary shadow-lg shadow-black/40 ${className ?? ""}`}
     >
-      <div className="[animation:var(--animate-float-slow)]">
+      <div className="animate-float-slow" dir="ltr">
         <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-cyan align-middle" />
         {label}
       </div>

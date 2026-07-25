@@ -29,7 +29,7 @@ export function Achievements() {
           <Reveal key={item.title} direction="up" delay={i * 0.08}>
             <div className="glass relative h-full overflow-hidden rounded-2xl p-6">
               <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyan/10 blur-3xl" />
-              <p className="font-[family-name:var(--font-geist)] text-lg font-semibold text-gradient">
+              <p className="font-(family-name:--font-geist) text-lg font-semibold text-gradient">
                 {item.title}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-text-secondary">

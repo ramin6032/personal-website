@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "@/components/ui/magnetic";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
-import { PROFILE } from "@/lib/content";
 import { useDictionary } from "@/lib/i18n/context";
 import Image from "next/image";
 

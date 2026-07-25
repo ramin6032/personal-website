@@ -27,14 +27,14 @@ export function Contact() {
           direction="up"
           className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-cyan"
         >
-          <span className="h-px w-8 bg-gradient-to-r from-transparent to-cyan" />
+          <span className="h-px w-8 bg-linear-to-r from-transparent to-cyan" />
           {contact.eyebrow}
-          <span className="h-px w-8 bg-gradient-to-r from-cyan to-transparent" />
+          <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
         </Reveal>
 
         <AnimatedHeading
           text={contact.title}
-          className="font-[family-name:var(--font-geist)] text-4xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
+          className="font-(family-name:--font-geist) text-4xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
         />
 
         <Reveal
@@ -59,7 +59,7 @@ export function Contact() {
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </a>
           </Magnetic>
 
@@ -76,7 +76,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal direction="up" delay={0.3} className="mt-8">
-          <p className="!text-center text-sm text-text-muted">
+          <p className="text-center! text-sm text-text-muted">
             {PROFILE.location}
           </p>
         </Reveal>

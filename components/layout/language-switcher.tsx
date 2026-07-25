@@ -80,7 +80,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}
-            className="glass absolute end-0 top-full z-50 mt-2 min-w-[9rem] overflow-hidden rounded-xl p-1 shadow-lg shadow-black/40"
+            className="glass absolute inset-e-0 top-full z-50 mt-2 min-w-36 overflow-hidden rounded-xl p-1 shadow-lg shadow-black/40"
           >
             {locales.map((l) => (
               <li key={l}>
@@ -90,10 +90,10 @@ export function LanguageSwitcher({ className }: { className?: string }) {
                   aria-selected={l === locale}
                   onClick={() => switchTo(l)}
                   className={cn(
-                    "flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-start text-sm transition-colors duration-150",
+                    "flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-start text-sm transition-colors duration-150 ",
                     l === locale
-                      ? "bg-white/10 text-text-primary"
-                      : "text-text-secondary hover:bg-white/5 hover:text-text-primary",
+                      ? "bg-white/10 text-text-primary rounded-2xl"
+                      : "text-text-secondary hover:bg-white/5 hover:text-text-primary rounded-2xl",
                   )}
                 >
                   <span>{localeNames[l]}</span>
