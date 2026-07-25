@@ -15,7 +15,7 @@ interface GlitchCanvasProps {
 export default function GlitchCanvas({
   width = 600,
   height = 700,
-  imageUrl = "/model/portre-2.png",
+  imageUrl = "",
   isActive = true,
 }: GlitchCanvasProps) {
   const appRef = useRef<PIXI.Application | null>(null);
@@ -80,7 +80,7 @@ export default function GlitchCanvas({
         const baseScale = scale;
 
         img.on("pointerover", () => {
-           gsap.to(img.scale, {
+          gsap.to(img.scale, {
             x: baseScale * 1.08,
             y: baseScale * 1.08,
             duration: 0.4,
@@ -89,7 +89,7 @@ export default function GlitchCanvas({
         });
 
         img.on("pointerout", () => {
-           gsap.to(img.scale, {
+          gsap.to(img.scale, {
             x: baseScale,
             y: baseScale,
             duration: 0.4,
@@ -241,17 +241,5 @@ export default function GlitchCanvas({
 
   if (!isActive) return;
 
-  return (
-    <div ref={containerRef} />
-    // <canvas
-    //   ref={canvasRef}
-    //   width={width}
-    //   height={height}
-    //   className="pixi w-full h-full rounded-lg"
-    //   style={{
-    //     display: "block",
-    //     border: "1px solid rgba(255, 255, 255, 0.1)",
-    //   }}
-    // />
-  );
+  return <div ref={containerRef} />;
 }

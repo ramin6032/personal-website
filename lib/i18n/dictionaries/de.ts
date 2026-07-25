@@ -299,10 +299,11 @@ const de: Dictionary = {
   },
   contact: {
     eyebrow: "Kontakt",
-    title: "Lass uns etwas Sinnvolles bauen",
-    lede: "Offen für Remote- und internationale Frontend-Stellen. Wenn dir saubere Architektur, Performance und zuverlässige Produkte wichtig sind, würde ich mich freuen zu sprechen.",
-    primaryCta: "Gespräch starten",
+    title: "Lassen Sie uns Produkte entwickeln, die wirklich etwas bewegen",
+    lede: "Ich bin offen für Remote- und internationale Positionen im Frontend Engineering. Wenn Ihnen saubere Architektur, hohe Performance und die Entwicklung zuverlässiger Produkte wichtig sind, freue ich mich auf Ihre Nachricht.",
+    primaryCta: "E-Mail",
     linkedinCta: "LinkedIn",
+    whatsapp: "WhatsApp",
   },
   languageSwitcher: {
     label: "Sprache",

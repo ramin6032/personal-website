@@ -96,6 +96,7 @@ export type Dictionary = {
     lede: string;
     primaryCta: string;
     linkedinCta: string;
+    whatsapp: string;
   };
   languageSwitcher: {
     label: string;

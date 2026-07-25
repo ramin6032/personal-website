@@ -165,7 +165,7 @@ export function Hero() {
                 <div className=" absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] animate-spin-slow" />
                 <div className="absolute  inset-0.75 rounded-full bg-void/80 backdrop-blur-sm overflow-hidden ">
                   {/* Active Portrait */}
-                  <div className="relative rtl:left-8 ltr:right-8">
+                  <div className="relative flex justify-center ">
                     <GlitchCanvas
                       width={410}
                       height={660}
@@ -186,39 +186,6 @@ export function Hero() {
               <div className="h-[104%] w-[104%] rounded-full border border-cyan/20 animate-spin-slow [animation-duration:34s]" />
               <div className="absolute h-[118%] w-[118%] rounded-full border border-violet/10 animate-spin-slow [animation-direction:reverse] [animation-duration:46s]" />
             </div>
-
-            {/* DisabledPortrait */}
-            {/* <motion.div
-              style={{
-                x: portraitX,
-                y: portraitY,
-                rotateX: portraitRotX,
-                rotateY: portraitRotY,
-                transformStyle: "preserve-3d",
-              }}
-              initial={{ opacity: 0, y: 40, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                duration: 1.1,
-                delay: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="relative z-10 h-full w-full overflow-hidden"
-            >
-              <div className="relative h-full w-full [animation:var(--animate-float-slow)] overflow-hidden">
-                {/* <Image
-                  src="/portrait.png"
-                  alt={`${PROFILE.name} — ${profile.role}`}
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
-                  className="object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
-                /> */}
-
-            {/* Rim / key light */}
-            {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
-              </div> */}
-            {/* </motion.div> */}
 
             {/* Floating tech chips */}
             <FloatingChip

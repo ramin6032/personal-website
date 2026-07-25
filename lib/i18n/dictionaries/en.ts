@@ -34,7 +34,7 @@ const en: Dictionary = {
   },
   profile: {
     role: "Frontend Software Engineer & Architect",
-    availability: "Open to International Opportunities",
+    availability: "Open to remote & international Opportunities",
     location: "Isfahan, Iran · Open to remote collaboration & relocation",
   },
 
@@ -51,8 +51,8 @@ const en: Dictionary = {
 
     stats: [
       { value: "6+", label: "Years building software" },
-      { value: "18K+", label: "Active users supported" },
-      { value: "5+", label: "Enterprise Systems delivered" },
+      { value: "18K+", label: "Active users" },
+      { value: "5+", label: "Enterprise Systems" },
     ],
   },
   about: {
@@ -299,10 +299,11 @@ const en: Dictionary = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Let's build something worth shipping",
-    lede: "Open to remote & international frontend roles. If you care about clean architecture, performance and shipping reliable products, I'd love to talk.",
-    primaryCta: "Start a conversation",
+    title: "Let's Build Products That Matter",
+    lede: "I'm open to remote and international Frontend Engineering opportunities. If you value clean architecture, high performance, and building reliable products, I'd love to hear from you.",
+    primaryCta: "Email",
     linkedinCta: "LinkedIn",
+    whatsapp: "WhatsApp",
   },
   languageSwitcher: {
     label: "Language",

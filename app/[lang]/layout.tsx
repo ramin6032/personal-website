@@ -120,6 +120,7 @@ export default async function LocaleLayout({
       dir={localeDirection[locale]}
       className={cn("dark", inter.variable, geist.variable, vazirmatn.variable)}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <body className="bg-void font-sans antialiased">
         <I18nProvider locale={locale} dict={dict}>

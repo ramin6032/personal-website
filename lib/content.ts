@@ -18,11 +18,23 @@ export const PROFILE = {
   tagline:
     "I architect enterprise web platforms that stay fast, reliable and a pleasure to maintain.",
   location: "Isfahan, Iran · Open to remote / relocation",
-  availability: "Open to remote & international frontend roles",
+  availability: "Open to remote & international Opportunities",
   // REVIEW: confirm these are the addresses/handles you want public.
-  email: "ramin.mohagheghi@example.com", // REVIEW: replace with your real contact email
+  email: "ramin6032@gmail.com", // REVIEW: replace with your real contact email
   linkedin: "https://www.linkedin.com/in/ramin6032/",
-  github: "https://github.com/", // REVIEW: add your GitHub URL
+  github: "https://github.com/ramin6032", // REVIEW: add your GitHub URL
+  phone: "+98 913 974 1665",
+  whatsapp: {
+    phone: "989139741665",
+    text: "Hi Ramin, I saw your portfolio and I want to work with you.",
+    api: "https://api.whatsapp.com/send/",
+    type: "phone_number",
+    app_absent: "0",
+  },
+  cv: {
+    en: "/cv/cv-en.pdf",
+    fa: "/cv/cv-fa.pdf",
+  },
 } as const;
 
 /** Headline stats shown in the hero — all grounded in the real data. */

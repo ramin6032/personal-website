@@ -123,12 +123,12 @@ nav li button span {
   text-align: start;
 }
 
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] h5,
-[dir="rtl"] p,
+[dir="rtl"] h1:not(.text-center),
+[dir="rtl"] h2:not(.text-center),
+[dir="rtl"] h3:not(.text-center),
+[dir="rtl"] h4:not(.text-center),
+[dir="rtl"] h5:not(.text-center),
+[dir="rtl"] p:not(.text-center),
 [dir="rtl"] {
   text-align: right;
 }
