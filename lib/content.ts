@@ -92,7 +92,43 @@ export const WORK = [
       { label: "PWA", items: ["Workbox", "Web Push API"] },
     ],
     /** Real screenshots/video go here; empty → a generated signature visual. */
-    media: [] as WorkMedia[],
+    media: [
+      {
+        type: "image",
+        src: "/projects/sale-platform/main.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/desk-light.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/desk-dark.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/phone-home.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/sale.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/club.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+      {
+        type: "image",
+        src: "/projects/sale-platform/report.png",
+        alt: "ISP Customer Self-Service Platform",
+      },
+    ] as WorkMedia[],
   },
   {
     slug: "enterprise-operations-automation",
@@ -116,6 +152,7 @@ export const WORK = [
       },
       { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
       { label: "Infrastructure", items: ["Docker", "GitHub Actions"] },
+      { label: "Database", items: ["MySql"] },
     ],
     media: [] as WorkMedia[],
   },
@@ -135,6 +172,7 @@ export const WORK = [
       },
       { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
       { label: "Infrastructure", items: ["Docker", "GitHub Actions"] },
+      { label: "Database", items: ["MySql"] },
     ],
     media: [] as WorkMedia[],
   },
@@ -148,8 +186,9 @@ export const WORK = [
       { value: "Custom", label: "ERP architecture" },
     ],
     tech: [
-      { label: "Frontend", items: ["React", "JavaScript", "Ant Design"] },
-      { label: "Backend & Integration", items: ["Node.js", "REST APIs"] },
+      { label: "Frontend", items: ["Jquery", "JavaScript", "Bootstrap"] },
+      { label: "Backend & Integration", items: ["PHP", "MySql"] },
+      { label: "Database", items: ["MySql"] },
     ],
     media: [] as WorkMedia[],
   },

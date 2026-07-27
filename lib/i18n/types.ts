@@ -129,6 +129,7 @@ export type Dictionary = {
       }[];
       architecture: string[];
       impact: string[];
+      stack?: string[];
     }[];
   };
   achievements: {

@@ -76,7 +76,9 @@ export function WorkMediaFrame({
               alt={current.alt ?? title}
               fill
               className="object-cover"
+              loading="eager"
               sizes="(max-width: 1024px) 100vw, 60vw"
+              quality={90}
             />
           ) : (
             <video

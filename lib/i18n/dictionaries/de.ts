@@ -27,7 +27,7 @@ const de: Dictionary = {
       { href: "#about", label: "Über mich" },
       { href: "#skills", label: "Skills" },
       { href: "#experience", label: "Erfahrung" },
-      { href: "#projects", label: "Projekte" },
+      { href: "/de/work", label: "Projekte" },
       { href: "#contact", label: "Kontakt" },
     ],
     cta: "Kontakt aufnehmen",
@@ -294,270 +294,432 @@ const de: Dictionary = {
     items: [
       {
         slug: "isp-customer-self-service",
-        name: "ISP Self-Service-Plattform für Kunden",
+
+        name: "ISP Customer Self-Service Plattform",
+
         tagline:
-          "Ein einheitliches digitales Erlebnis für über 18.000 Abonnenten, um ihre Internetdienste zu kaufen, zu verwalten und Support zu erhalten — ganz ohne Anruf beim Support.",
+          "Eine skalierbare digitale Kundenplattform für über 18.000 Abonnenten zur Verwaltung, Buchung und Unterstützung von Internetdiensten über eine einheitliche Self-Service-Erfahrung.",
+
         overview:
-          "Eine Self-Service-Plattform, die die Interaktion der Abonnenten mit den ISP-Diensten grundlegend verändert und ein einheitliches digitales Erlebnis für Kauf, Verwaltung und Support von Internetdiensten bietet. Die Plattform bedient über 18.000 aktive Abonnenten und ermöglicht es Kunden, ihre Dienste eigenständig zu verwalten, ohne auf klassische Supportkanäle angewiesen zu sein. Sie vereint digitalen Vertrieb, Serviceverwaltung, Kundensupport, Engagement-Funktionen und personalisierte Erlebnisse in einer skalierbaren Webanwendung.",
+          "Entwicklung einer kundenorientierten digitalen Plattform, die die Interaktion von Abonnenten mit ISP-Services grundlegend verbessert. Die Plattform unterstützt über 18.000 aktive Nutzer und vereint digitale Verkäufe, Servicemanagement, Kundensupport, Engagement-Funktionen und personalisierte Erfahrungen in einer skalierbaren Webanwendung.",
+
         challenge: {
           intro:
-            "Vor der Plattform hingen viele Kundeninteraktionen — Verlängerungen, Käufe und Supportanfragen — von manuellen Prozessen und direkter Kommunikation mit dem Support ab. Ziel war eine moderne, responsive und skalierbare Plattform, die Kundeninteraktionen automatisiert und gleichzeitig Erlebnis und Effizienz verbessert.",
+            "Vor der Einführung der Plattform waren viele Kundeninteraktionen wie Serviceverlängerungen, Käufe und Supportanfragen von manuellen Prozessen und direkter Kommunikation mit Support-Teams abhängig. Ziel war die Entwicklung einer modernen digitalen Erfahrung, die Kunden mehr Selbstständigkeit ermöglicht und gleichzeitig die operative Effizienz verbessert.",
+
           points: [
-            "Hohe Abhängigkeit von Supportkanälen bei Routineanfragen.",
-            "Eingeschränkte Sichtbarkeit von Kundenverhalten und Engagement.",
-            "Zeitaufwändige manuelle Abläufe für häufige Serviceanfragen.",
-            "Fehlen eines einheitlichen digitalen Erlebnisses über alle Customer Journeys.",
+            "Hohe Abhängigkeit von Support-Kanälen für alltägliche Kundenanfragen.",
+            "Manuelle Prozesse für Serviceverwaltung und Kundenoperationen.",
+            "Begrenzte Transparenz über Kundenverhalten und Engagement.",
+            "Fehlende einheitliche digitale Customer Journey.",
           ],
         },
+
         role: {
           intro:
-            "Als Frontend Engineer habe ich die Frontend-Architektur entworfen und umgesetzt, die zentralen Anwendungsprozesse entwickelt und mit den Backend-Teams an einer produktionsreifen Plattform zusammengearbeitet.",
+            "Als Frontend Engineer entwickelte ich die Frontend-Architektur, implementierte zentrale Kundenprozesse und arbeitete mit Backend-Teams zusammen, um eine produktionsreife Plattform für tausende Nutzer bereitzustellen.",
+
           responsibilities: [
-            "Entwurf einer skalierbaren Frontend-Architektur mit Next.js und React.",
-            "Umsetzung kundenorientierter Workflows und komplexer Geschäftsprozesse.",
-            "Verbesserung von Performance, Wartbarkeit und Nutzererlebnis.",
-            "Integration der Frontend-Funktionen mit Backend-Services und APIs.",
-            "Entwurf wiederverwendbarer Komponenten und Etablierung von Entwicklungsmustern.",
+            "Entwicklung einer skalierbaren Frontend-Architektur mit Next.js, React und TypeScript.",
+            "Implementierung komplexer Customer Journeys für Kauf, Verlängerung und Support.",
+            "Aufbau wiederverwendbarer Komponenten und Frontend-Entwicklungsmuster.",
+            "Optimierung von Performance, Wartbarkeit und User Experience.",
+            "Integration von Frontend-Funktionen mit Backend-Services und APIs.",
           ],
         },
+
         features: [
           {
-            title: "Digitale Serviceverwaltung",
+            title: "Digitales Servicemanagement",
+
             items: [
-              "Online-Kauf- und Verlängerungsprozesse.",
-              "Verwaltung des Kundenkontos.",
-              "Statusverfolgung und Reporting von Diensten.",
+              "Online-Kauf und Verlängerung von Services.",
+              "Verwaltung von Kundenkonten und Services.",
+              "Service-Statusverfolgung und Reporting.",
             ],
           },
+
           {
-            title: "Kundensupport-Workflows",
+            title: "Kunden-Support-Plattform",
+
             items: [
-              "Digitale Einreichung von Supportanfragen.",
-              "Workflows für die Kundenkommunikation.",
-              "Verfolgung und Statusübersicht von Anfragen.",
+              "Digitale Erstellung von Supportanfragen.",
+              "Kommunikationsprozesse mit Kunden.",
+              "Nachverfolgung von Anfragen und Statusanzeige.",
             ],
           },
+
           {
-            title: "Plattform für Kundenbindung",
+            title: "Kundenbindung & Engagement",
+
             items: [
-              "Loyalty-Programme.",
-              "Kundenumfragen.",
-              "Werbekampagnen.",
-              "Personalisierte Empfehlungen.",
+              "Treueprogramme und Kundenumfragen.",
+              "Werbekampagnen und zielgerichtete Kommunikation.",
+              "Personalisierte Empfehlungssysteme.",
             ],
           },
+
           {
-            title: "Web-Push-Benachrichtigungssystem",
+            title: "Web Push Notification Plattform",
+
             items: [
               "Browserbasierte Push-Benachrichtigungen.",
-              "Verwaltung von Abonnements.",
-              "Statusverfolgung von Benachrichtigungen.",
-              "Zustellanalyse und Reporting.",
+              "Verwaltung von Benutzerabonnements.",
+              "Tracking von Zustellung und Engagement.",
+              "Reporting und Monitoring von Benachrichtigungen.",
             ],
           },
         ],
+
         architecture: [
-          "Umsetzung einer Next.js-SSR-Architektur zur Verbesserung von Performance und SEO.",
-          "Einsatz von Progressive-Web-App-Funktionen für ein App-ähnliches Erlebnis ohne Installation.",
-          "Entwurf wiederverwendbarer UI-Komponenten für höhere Entwicklungsgeschwindigkeit und Konsistenz.",
-          "Anwendung von Client-seitigen State-Management-Mustern für komplexe Workflows.",
-          "Integration von Analytics und Monitoring für bessere Einblicke in Nutzerinteraktionen.",
+          "Implementierung einer Next.js SSR-Architektur mit Fokus auf Performance und Skalierbarkeit.",
+          "Nutzung von Progressive Web App (PWA)-Funktionen für eine App-ähnliche Erfahrung ohne Installation.",
+          "Entwicklung einer wiederverwendbaren Komponentenarchitektur für konsistente Entwicklung.",
+          "Anwendung geeigneter State-Management-Strategien für komplexe Kundenprozesse.",
+          "Integration von Analytics- und Monitoring-Funktionen zur Analyse des Nutzerverhaltens.",
         ],
+
         impact: [
-          "Ermöglichte mehr als 18.000 Abonnenten die Verwaltung ihrer Dienste über eine einheitliche digitale Plattform.",
+          "Ermöglichte über 18.000 Abonnenten die eigenständige Verwaltung ihrer Services über eine zentrale digitale Plattform.",
           "Reduzierte die Abhängigkeit von manuellen Supportprozessen durch Self-Service-Workflows.",
-          "Verbesserte die Kundenbindung durch personalisierte Kommunikation und Benachrichtigungssysteme.",
-          "Schuf eine skalierbare Frontend-Grundlage für zukünftige Geschäftsfunktionen.",
+          "Verbesserte Kundenbindung durch personalisierte Kommunikation und Benachrichtigungssysteme.",
+          "Schuf eine skalierbare Frontend-Basis für zukünftige digitale Services.",
+        ],
+
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "React Query",
+          "Redux",
+          "Ant Design",
+          "Tailwind CSS",
+          "Node.js",
+          "REST APIs",
+          "Docker",
+          "GitHub Actions",
+          "Workbox",
+          "Web Push API",
         ],
       },
       {
         slug: "enterprise-operations-automation",
-        name: "Enterprise-Plattform für Operations Management und Prozessautomatisierung",
+
+        name: "Integrierte Plattform für Betriebsmanagement, Compliance-Überwachung und Prozessautomatisierung",
+
         tagline:
-          "Eine regelbasierte Plattform, die operative Daten überwacht, Anomalien erkennt und automatisch den passenden Workflow startet.",
+          "Eine zentrale Unternehmensplattform für operative Überwachung, Compliance-Prüfung, Incident Management und Workflow-Automatisierung über technische und geschäftliche Bereiche hinweg.",
+
         overview:
-          "Eine Enterprise-Plattform, die Betriebsüberwachung, Finanz-Compliance, Incident Management und Geschäftsprozessautomatisierung vereinte. Sie wertete operative Daten kontinuierlich anhand organisatorischer Regeln aus, erkannte Anomalien automatisch und startete standardisierte Workflows zur bereichsübergreifenden Problemlösung.",
+          "Entwicklung einer Enterprise-Plattform zur Zentralisierung verteilter Betriebsprozesse und deren Überführung in strukturierte, transparente und nachvollziehbare Workflows. Die Plattform analysiert kontinuierlich operative und finanzielle Daten, erkennt Abweichungen anhand konfigurierbarer Geschäftsregeln und startet automatisch definierte Lösungsprozesse über verschiedene Organisationseinheiten hinweg.",
+
         challenge: {
           intro:
-            "Die operative und finanzielle Überwachung war über Abteilungen hinweg fragmentiert und basierte auf manuellen Prüfungen, die Abweichungen nur langsam erkannten und Eskalationen uneinheitlich handhabten.",
+            "Mit dem Wachstum der Organisation wurde die Verwaltung technischer Aktivitäten, finanzieller Prozesse und teamübergreifender Abläufe zunehmend komplex. Fehlende Transparenz, manuelle Prüfprozesse und mangelnde Nachverfolgbarkeit von Problemen vom Erkennen bis zur Lösung stellten zentrale Herausforderungen dar.",
+
           points: [
-            "Manuelle Abstimmung zwischen internen Aufzeichnungen und Banktransaktionen.",
-            "Keine einheitliche Sicht auf die operative Compliance über Teams hinweg.",
-            "Langsame, uneinheitliche Eskalation und Lösung von Vorfällen.",
-            "Außendienstaktivitäten und Berichte über getrennte Kanäle verstreut.",
+            "Fehlende zentrale Übersicht über operative und geschäftliche Prozesse.",
+            "Manuelle Überprüfung von Compliance-Regeln und betrieblichen Anforderungen.",
+            "Schwierige Erkennung von Abweichungen in Finanz- und Betriebsdaten.",
+            "Fragmentierte Kommunikation zwischen technischen und operativen Teams.",
+            "Keine strukturierte Nachverfolgung des Problemlösungsprozesses.",
           ],
         },
+
         role: {
           intro:
-            "Ich habe die Frontend-Plattform und die zugehörigen operativen Werkzeuge entworfen und entwickelt und eng mit den Backend-Teams an Rule Engine und Integrationen zusammengearbeitet.",
+            "Als verantwortlicher Software Engineer entwickelte ich diese Plattform vollständig von Grund auf und war für die Architektur und Implementierung zentraler Unternehmensmodule verantwortlich. Dazu gehörten Finanzüberwachung, technische Betriebsprozesse, Incident Management, Workflow-Automatisierung und interne Werkzeuge für operative Teams.",
+
           responsibilities: [
-            "Entwurf der Frontend-Architektur für Monitoring- und Automatisierungs-Dashboards.",
-            "Entwicklung der Rule-Engine-UI zur Validierung von Finanz- und Betriebsdaten.",
-            "Entwicklung der Oberflächen für Incident Management und Untersuchungsworkflows.",
-            "Erstellung der internen Außendienst-Anwendung und der Kollaborationstools.",
+            "Entwicklung und Umsetzung einer skalierbaren Frontend-Architektur für komplexe Enterprise-Workflows.",
+            "Implementierung zentraler Betriebsmodule wie Datenüberwachung, Management-Dashboards, Incident Management und operative Prozessabläufe.",
+            "Aufbau wiederverwendbarer Komponenten für dynamische Formulare, workflowbasierte Anwendungen und komplexe Unternehmensoberflächen.",
+            "Entwicklung automatisierter Monitoring-Prozesse zur Bewertung operativer Daten anhand definierter Unternehmensregeln und Standards.",
+            "Implementierung von Workflow-Logiken, Statusverfolgung und Nachverfolgungsprozessen für unvollständige oder verzögerte Vorgänge.",
+            "Entwicklung interner Anwendungen für technische und operative Teams mit Funktionen wie Berichten, Checklisten, Betriebsformularen und Kommunikationswerkzeugen.",
+            "Verbesserung der Benutzerfreundlichkeit, Wartbarkeit und Erweiterbarkeit der internen Unternehmenssysteme.",
           ],
         },
+
         features: [
           {
-            title: "Monitoring & Compliance",
+            title: "Regelbasierte Compliance- und Datenüberwachung",
+
             items: [
-              "Rule Engine zur Validierung von Finanz- und Betriebsdaten anhand von Richtlinien.",
-              "Automatisierte Abstimmung zwischen internen Aufzeichnungen und Banktransaktionen.",
-              "Kontinuierliche Betriebsüberwachung mit Anomalieerkennung.",
+              "Entwicklung einer konfigurierbaren Rule Engine zur Bewertung von Daten anhand organisatorischer Standards.",
+              "Automatische Erkennung von Abweichungen und Regelverletzungen.",
+              "Erstellung operativer Fälle zur Analyse und Bearbeitung.",
             ],
           },
+
           {
-            title: "Incident Management",
+            title: "Finanzielle Abstimmung und Transaktionsüberwachung",
+
             items: [
-              "Automatische Fallerstellung bei erkannten Anomalien.",
-              "Standardisierte Untersuchungsworkflows.",
-              "Bereichsübergreifende Nachverfolgung und Lösung von Vorfällen.",
+              "Automatische Abstimmung interner Finanzdaten mit Banktransaktionen.",
+              "Erkennung fehlerhafter, nicht übereinstimmender und unklarer Transaktionen.",
+              "Bereitstellung von Ausnahmeberichten zur Korrektur und Nachverfolgung.",
             ],
           },
+
           {
-            title: "Außendienstprozesse",
+            title: "Incident Management & Workflow Automation",
+
             items: [
-              "Servicebereitstellung und Störungsmanagement.",
-              "Machbarkeitsprüfungen und Nachverfolgung von Außendiensttätigkeiten.",
-              "Sprachbasierte Tagesberichte und Betriebsformulare.",
+              "Automatische Erstellung operativer Fälle bei erkannten Problemen.",
+              "Verwaltung von Aufgaben, Status und vollständigem Lösungsprozess.",
+              "Standardisierte Workflows zur Bearbeitung organisatorischer Probleme.",
+            ],
+          },
+
+          {
+            title: "Interne Plattform für operative Teams",
+
+            items: [
+              "Workflows für Servicebereitstellung und Fehlerverwaltung.",
+              "Machbarkeitsprüfungen und operative Formulare.",
               "Geräte-Checklisten und Erfassung der Maschinennutzung.",
+              "Sprachbasierte Tagesberichte und interne Kommunikation.",
             ],
           },
         ],
+
         architecture: [
-          "Aufbau eines skalierbaren Frontends für datenintensive Monitoring- und Automatisierungsansichten.",
-          "Entwurf einer Rule-Engine-Oberfläche zur Definition und Auswertung von Geschäftsregeln.",
-          "Umsetzung einer workflowgetriebenen UI, die auf im Backend erkannte Ereignisse reagiert.",
-          "Integration operativer Werkzeuge für Außendienstteams und teamübergreifende Zusammenarbeit.",
+          "Entwicklung einer modularen Architektur mit klarer Trennung zwischen Finanz- und Technikbereichen.",
+          "Aufbau wiederverwendbarer Komponenten für Enterprise-Formulare und Workflows.",
+          "Implementierung datenorientierter Oberflächen für Betriebsüberwachung.",
+          "Entwicklung flexibler Workflow-Strukturen für unterschiedliche Geschäftsprozesse.",
+          "Fokus auf Skalierbarkeit, Wartbarkeit und langfristige Erweiterbarkeit.",
         ],
+
         impact: [
-          "Automatisierte Betriebsüberwachung und Finanzabstimmung über Abteilungen hinweg.",
-          "Reduzierte manuelle Kontrolle durch automatisch gestartete Untersuchungsworkflows.",
-          "Verbesserte operative Transparenz und Koordination zwischen Teams.",
-          "Standardisierte Vorfallbearbeitung von der Erkennung bis zur Lösung.",
+          "Zentralisierung technischer und finanzieller Prozesse in einer einheitlichen Plattform.",
+          "Reduzierung manueller Prüfaufwände durch automatische Validierung und Regelüberwachung.",
+          "Verbesserte Nachverfolgbarkeit von Problemen vom Erkennen bis zur Lösung.",
+          "Bessere Zusammenarbeit zwischen technischen und operativen Teams.",
+          "Verbesserte Management-Transparenz durch Dashboards und Reports.",
+        ],
+
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "React Query",
+          "Redux",
+          "Ant Design",
+          "Node.js",
+          "REST APIs",
+          "MySQL",
+          "Docker",
         ],
       },
       {
         slug: "financial-tax-integration",
-        name: "Plattform für die Verarbeitung von Finanztransaktionen",
+
+        name: "Plattform für Finanztransaktionsverarbeitung und Steuerintegration",
+
         tagline:
-          "Eine zuverlässige Pipeline, die Finanztransaktionen an das nationale Steuersystem Irans übermittelt und jede bis zum Abschluss verfolgt.",
+          "Eine zuverlässige Plattform zur automatisierten Übermittlung von Finanztransaktionen, Lifecycle-Tracking und Fehlerverwaltung bei steuerlichen Meldungen.",
+
         overview:
-          "Eine Transaktionsverarbeitungsplattform, die für die Übermittlung von Finanztransaktionen an das nationale Steuersystem Irans verantwortlich war und jede Transaktion über ihren gesamten Lebenszyklus verfolgte. Sie stellte die Zustellzuverlässigkeit sicher, erkannte Verarbeitungsfehler und bot vollständige operative Transparenz für Fehlerbehandlung und erneute Übermittlung.",
+          "Entwicklung einer Finanztransaktionsplattform, die mit dem iranischen nationalen Steuersystem (Samaneh Moadian) integriert wurde. Das System automatisierte die Übermittlung von Transaktionen, verfolgte jede Transaktion über ihren gesamten Lebenszyklus, erkannte Fehler und unterstützte Prüfungs- sowie erneute Übermittlungsprozesse.",
+
         challenge: {
           intro:
-            "Die Übermittlung von Finanztransaktionen an eine nationale Steuerbehörde erfordert Zuverlässigkeit und Nachvollziehbarkeit — eine einzige verlorene oder fehlgeschlagene Übermittlung kann Compliance- und Abstimmungsprobleme verursachen, die schwer zu beheben sind.",
+            "Vor der Einführung des Systems erforderte die steuerliche Berichterstattung umfangreiche manuelle Überwachung und Überprüfung, um die erfolgreiche Verarbeitung von Transaktionen sicherzustellen. Ziel war eine zuverlässige Lösung mit vollständiger Transparenz, Nachverfolgbarkeit und effizienter Fehlerbehandlung.",
+
           points: [
-            "Behörden-Steuer-APIs erforderten präzise, zuverlässige Übermittlung.",
-            "Jede Transaktion benötigte Nachvollziehbarkeit über ihren Lebenszyklus.",
-            "Fehlgeschlagene oder ausstehende Transaktionen mussten erkannt und wiederhergestellt werden.",
-            "Operations-Teams benötigten Einblick in den Verarbeitungsstatus.",
+            "Fehlende Transparenz über den Status übermittelter Transaktionen.",
+            "Manuelle Nachverfolgung fehlgeschlagener oder abgelehnter Übermittlungen.",
+            "Schwierige Identifikation von Problemen innerhalb des Transaktionsprozesses.",
+            "Zeitaufwendige Korrektur- und Wiederholungsprozesse.",
           ],
         },
+
         role: {
           intro:
-            "Ich habe das Frontend und die operativen Dashboards entworfen und entwickelt und mit dem Backend an Integration und Retry-Logik zusammengearbeitet.",
+            "Als verantwortlicher Software Engineer entwickelte ich diese Plattform vollständig von Grund auf auf Basis der technischen Spezifikationen des nationalen Steuersystems. Ich entwarf und implementierte die Integrationsschicht, Transaktionsprozesse, Überwachungsmechanismen sowie die operativen Benutzeroberflächen für eine zuverlässige steuerliche Berichterstattung.",
+
           responsibilities: [
-            "Entwicklung der Übermittlungs- und Tracking-Oberflächen für Finanztransaktionen.",
-            "Entwicklung operativer Dashboards für Statusüberwachung und Analyse.",
-            "Entwurf der Oberflächen für Fehlerreporting und Retry-Workflows.",
-            "Integration mit Behörden-Steuer-APIs über Backend-Services.",
+            "Entwicklung der Gesamtarchitektur für die Verarbeitung und Verwaltung des Lebenszyklus von Finanztransaktionen.",
+            "Implementierung der API-Integration mit dem nationalen Steuersystem auf Basis offizieller technischer Dokumentationen.",
+            "Entwicklung automatisierter Scheduler für die Übermittlung von Transaktionen, den Abruf von Ergebnissen und die Synchronisierung von Statusinformationen.",
+            "Implementierung eines vollständigen Transaktions-Trackings vom Zeitpunkt der Übermittlung bis zum finalen Verarbeitungsergebnis.",
+            "Entwicklung von Fehlerbehandlungs-, Logging- und Recovery-Mechanismen für fehlgeschlagene Transaktionen.",
+            "Erstellung operativer Dashboards und Benutzeroberflächen zur Überwachung, Analyse und erneuten Übermittlung von Transaktionen.",
           ],
         },
+
         features: [
           {
-            title: "Transaktionsverarbeitung",
+            title: "Automatisierte Steuertransaktionsübermittlung",
+
             items: [
-              "Automatisierte Übermittlung über Behörden-Steuer-APIs.",
-              "End-to-End-Verfolgung mit eindeutigen Tracking-IDs.",
-              "Lebenszyklusverwaltung von der Übermittlung bis zum Abschluss.",
+              "Automatische Übermittlung von Finanztransaktionen an die Steuerinfrastruktur.",
+              "Verarbeitung verschiedener Antwort- und Statuszustände.",
+              "Sicherstellung einer zuverlässigen Transaktionsverfolgung.",
             ],
           },
+
           {
-            title: "Zuverlässigkeit & Wiederherstellung",
+            title: "Transaktions-Lifecycle-Management",
+
             items: [
-              "Monitoring und Fehlerreporting für jede Transaktion.",
-              "Retry-Workflows für fehlgeschlagene oder ausstehende Transaktionen.",
-              "Fehlerbehandlung und Unterstützung bei der erneuten Übermittlung.",
+              "Vergabe eindeutiger Tracking-IDs für jede Transaktion.",
+              "Überwachung des Status vom Versand bis zum Endergebnis.",
+              "Vollständige Historie für Analyse und Nachverfolgung.",
             ],
           },
+
           {
-            title: "Operative Transparenz",
+            title: "Fehlerverwaltung & Wiederherstellung",
+
             items: [
-              "Dashboards zur Überwachung des Transaktionsstatus.",
-              "Verarbeitungsanalyse und Zuverlässigkeitsreporting.",
+              "Erkennung fehlgeschlagener und abgelehnter Transaktionen.",
+              "Anzeige detaillierter Fehlerinformationen zur Analyse.",
+              "Unterstützung von Korrektur- und erneuten Übermittlungsprozessen.",
+            ],
+          },
+
+          {
+            title: "Operatives Reporting",
+
+            items: [
+              "Dashboards zur Überwachung von Transaktionsstatus.",
+              "Transparenz über erfolgreiche, fehlerhafte und ausstehende Vorgänge.",
+              "Verbesserung der Transparenz in Finanzprozessen.",
             ],
           },
         ],
+
         architecture: [
-          "Entwurf eines zuverlässigen Übermittlungs- und Tracking-Flows rund um die Behörden-Steuer-APIs.",
-          "Umsetzung einer End-to-End-Verfolgung mit eindeutigen IDs pro Transaktion.",
-          "Aufbau von Monitoring-, Fehlerreporting- und Retry-Workflows für Resilienz.",
-          "Entwicklung operativer Dashboards für Status und Verarbeitungsanalyse.",
+          "Entwicklung optimierter Benutzeroberflächen für die Überwachung großer Transaktionsmengen.",
+          "Trennung der Transaktionsverarbeitung von Benutzeroberflächen und Monitoring-Workflows.",
+          "Fokus auf Zuverlässigkeit, Nachverfolgbarkeit und operative Transparenz.",
         ],
+
         impact: [
-          "Automatisierte Übermittlung von Finanztransaktionen an das nationale Steuersystem.",
-          "Garantierte Nachvollziehbarkeit jeder Transaktion bis zum Abschluss.",
-          "Reduzierte fehlgeschlagene Übermittlungen durch Erkennung und Retry-Workflows.",
-          "Verschaffte Operations-Teams volle Transparenz über die Verarbeitungszuverlässigkeit.",
+          "Verbesserte Zuverlässigkeit der steuerlichen Reporting-Prozesse.",
+          "Reduzierung manueller Aufwände bei der Transaktionsüberwachung.",
+          "Schnellere Identifikation und Behebung fehlgeschlagener Übermittlungen.",
+          "Erhöhte Transparenz innerhalb der Finanzprozesse.",
+        ],
+
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "REST APIs",
+          "MySQL",
         ],
       },
       {
         slug: "greenhouse-erp",
+
         name: "Geschäftsmanagement-Plattform für ein Gewächshausunternehmen",
+
         tagline:
-          "Ein individuelles ERP, das Vertrieb, Lager, Finanzen, Logistik und CRM in einem operativen System vereint.",
+          "Eine individuelle Business-Management-Plattform zur Integration von Vertrieb, Lager, Finanzen, Logistik und Kundenverwaltung für ein wachsendes Agrarunternehmen.",
+
         overview:
-          "Eine individuelle ERP-Lösung, die die zentralen Geschäftsprozesse des Unternehmens in einer einzigen Plattform bündelte. Das System integrierte Vertrieb, Lagerverwaltung, Finanzen, Logistik und Kundenmanagement, bot operative Transparenz in Echtzeit und reduzierte manuelle Abläufe durch Workflow-Automatisierung.",
+          "Entwicklung einer individuellen Business-Management-Plattform für ein Gewächshausunternehmen zur Zentralisierung und Automatisierung zentraler Geschäftsprozesse. Die Lösung ersetzte verteilte manuelle Abläufe durch ein integriertes System für Vertrieb, Bestandsverwaltung, Finanzprozesse, Logistik, Kundenmanagement und Business-Reporting.",
+
         challenge: {
           intro:
-            "Die zentralen Geschäftsprozesse waren über getrennte Werkzeuge und manuelle Abläufe verteilt, was einen Echtzeit-Überblick über das Geschäft erschwerte und die Datenkonsistenz über Abteilungen hinweg gefährdete.",
+            "Vor der Einführung der Plattform wurden wichtige Geschäftsprozesse über getrennte und überwiegend manuelle Abläufe verwaltet. Die Verwaltung von Vertrieb, Beständen, Kundendaten und Finanzprozessen erforderte erheblichen manuellen Aufwand und bot nur eingeschränkte Transparenz über die Geschäftsleistung.",
+
           points: [
-            "Vertrieb, Lager, Finanzen und Logistik lagen in getrennten Systemen.",
-            "Manuelle Prozesse verlangsamten den Betrieb und verursachten Inkonsistenzen.",
-            "Keine operative Transparenz in Echtzeit für Entscheidungen.",
-            "Reporting war fragmentiert und zeitaufwändig zusammenzustellen.",
+            "Fehlendes zentrales System zur Verwaltung der Geschäftsprozesse.",
+            "Manuelle Erfassung und Nachverfolgung von Verkäufen, Beständen und Kundendaten.",
+            "Begrenzte Transparenz über finanzielle und operative Kennzahlen.",
+            "Fehlende Integration zwischen verschiedenen Geschäftsbereichen.",
+            "Schwierige Erstellung zuverlässiger Managementberichte.",
           ],
         },
+
         role: {
           intro:
-            "Ich habe Konzeption und Entwicklung end-to-end geleitet — von Architektur und Datenmodell bis zu Umsetzung und Deployment.",
+            "Ich übernahm die vollständige Verantwortung für den Entwicklungszyklus der Plattform – von der Anforderungsanalyse und Systemarchitektur über Datenbankdesign und Implementierung bis zur Bereitstellung und Weiterentwicklung.",
+
           responsibilities: [
-            "Entwurf der Gesamtarchitektur und des relationalen Datenmodells.",
-            "Entwicklung integrierter Module über die Geschäftsbereiche hinweg.",
-            "Aufbau von Management-Dashboards und analytischen Reporting-Tools.",
-            "Automatisierung zentraler Geschäftsprozesse für Effizienz und Konsistenz.",
+            "Entwicklung der Gesamtarchitektur und des Datenbankmodells.",
+            "Implementierung von Frontend- und Backend-Modulen für zentrale Geschäftsprozesse.",
+            "Entwicklung von Workflows für Vertrieb, Lager, Finanzen und Kundenverwaltung.",
+            "Aufbau wiederverwendbarer Komponenten und wartbarer Softwarestrukturen.",
+            "Deployment und Wartung der Produktionsumgebung.",
           ],
         },
+
         features: [
           {
-            title: "Integrierte Module",
+            title: "Vertrieb & Kundenmanagement",
+
             items: [
-              "Vertrieb und Kundenmanagement (CRM).",
-              "Lager und Logistik.",
-              "Finanzen und Buchhaltung.",
+              "Verwaltung von Kundeninformationen.",
+              "Nachverfolgung von Verkaufsprozessen.",
+              "Verwaltung von Bestellungen und Transaktionen.",
+              "Kundenhistorie und Reporting.",
             ],
           },
+
           {
-            title: "Einblick & Automatisierung",
+            title: "Bestands- und Ressourcenmanagement",
+
             items: [
-              "Management-Dashboards und analytisches Reporting.",
-              "Automatisierte Geschäftsprozesse.",
-              "Operative Transparenz in Echtzeit.",
+              "Verwaltung und Nachverfolgung von Beständen.",
+              "Überwachung des Produkt- und Ressourcenlebenszyklus.",
+              "Erfassung von Lagerbewegungen.",
+              "Operative Bestandsberichte.",
+            ],
+          },
+
+          {
+            title: "Finanzprozesse",
+
+            items: [
+              "Verwaltung finanzieller Transaktionen.",
+              "Erfassung operativer Kosten.",
+              "Finanzberichte und verbesserte Transparenz.",
+              "Integration finanzieller Abläufe mit täglichen Geschäftsprozessen.",
+            ],
+          },
+
+          {
+            title: "Business Reporting & Analytics",
+
+            items: [
+              "Management-Dashboards.",
+              "Operative Leistungsberichte.",
+              "Zentrale Darstellung von Geschäftsdaten.",
+              "Verbesserte Entscheidungsfindung durch strukturierte Informationen.",
             ],
           },
         ],
+
         architecture: [
-          "Entwurf der Gesamtarchitektur und des relationalen Datenmodells.",
-          "Entwicklung integrierter Module für Vertrieb, Lager, Finanzen, Logistik und CRM.",
-          "Aufbau von Management-Dashboards und analytischen Reporting-Tools.",
-          "Automatisierung zentraler Geschäftsprozesse zur Verbesserung von Effizienz und Datenkonsistenz.",
+          "Entwicklung einer modularen Architektur zur Unterstützung verschiedener Geschäftsbereiche.",
+          "Erstellung eines relationalen Datenmodells entsprechend realer Geschäftsprozesse.",
+          "Implementierung wiederverwendbarer Komponenten für bessere Wartbarkeit.",
+          "Entwicklung skalierbarer Backend-Services und APIs.",
+          "Fokus auf Datenkonsistenz, Stabilität und langfristige Erweiterbarkeit.",
         ],
+
         impact: [
-          "Bündelte die zentralen Geschäftsprozesse in einer einzigen Plattform.",
-          "Reduzierte manuelle Abläufe durch Workflow-Automatisierung.",
-          "Lieferte operative Transparenz in Echtzeit für Entscheidungen.",
-          "Verbesserte die Datenkonsistenz über alle Geschäftsbereiche hinweg.",
+          "Zentralisierung wichtiger Geschäftsprozesse in einer einheitlichen Management-Plattform.",
+          "Reduzierung manueller Prozesse und verteilter Werkzeuge.",
+          "Verbesserung der Transparenz in Vertrieb, Bestand, Finanzen und Kundenmanagement.",
+          "Effizientere Geschäftssteuerung durch Automatisierung und Reporting.",
+        ],
+
+        stack: [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "REST APIs",
+          "MySQL",
+          "Docker",
+          "Git",
         ],
       },
     ],
