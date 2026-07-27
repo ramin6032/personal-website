@@ -8,6 +8,7 @@ import { useI18n } from "@/lib/i18n/context";
 import { WORK } from "@/lib/content";
 import { ACCENTS, localePath } from "@/lib/work";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 /**
  * WorkIndex — the /work landing grid. Each project is a large, interactive
@@ -29,14 +30,14 @@ export function WorkIndex() {
           direction="up"
           className="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-cyan"
         >
-          <span className="h-px w-8 bg-gradient-to-r from-cyan to-transparent" />
+          <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
           {index.eyebrow}
         </Reveal>
         <Reveal
           direction="up"
           delay={0.05}
           as="h1"
-          className="font-[family-name:var(--font-geist)] text-4xl font-semibold leading-[1.05] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
+          className="font-(family-name:--font-geist) text-4xl font-semibold leading-[1.05] tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
         >
           {index.title}
         </Reveal>
@@ -60,17 +61,18 @@ export function WorkIndex() {
                 className="group block h-full"
               >
                 <TiltCard className="h-full rounded-2xl" max={5}>
-                  <article className="glass relative flex h-full flex-col overflow-hidden rounded-2xl p-5 [transform:translateZ(0)]">
+                  <article className="glass relative flex h-full flex-col overflow-hidden rounded-2xl p-5 transform-[translateZ(0)]">
                     {/* Visual */}
                     <div className="mb-6 overflow-hidden rounded-xl">
-                      <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                      <div className="transition-transform relative duration-700 ease-out group-hover:scale-[1.03] aspect-16/10">
                         {meta.media.length > 0 &&
                         meta.media[0].type === "image" ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
+                          <Image
                             src={meta.media[0].src}
                             alt={item.name}
-                            className="aspect-[16/10] w-full rounded-xl border border-line object-cover"
+                            className=" w-full rounded-xl border border-line object-cover"
+                            loading="eager"
+                            fill
                           />
                         ) : (
                           <WorkVisual slug={item.slug} accent={meta.accent} />
@@ -103,7 +105,7 @@ export function WorkIndex() {
                     <div className="mt-6 flex items-center gap-2 text-sm font-medium">
                       <span
                         className={cn(
-                          "bg-gradient-to-r bg-clip-text text-transparent",
+                          "bg-linear-to-r bg-clip-text text-transparent",
                           a.gradient,
                         )}
                       >

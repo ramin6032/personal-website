@@ -95,7 +95,7 @@ export const WORK = [
     media: [
       {
         type: "image",
-        src: "/projects/sale-platform/main.png",
+        src: "/projects/sale-platform/cover.png",
         alt: "ISP Customer Self-Service Platform",
       },
       {
