@@ -86,12 +86,12 @@ export function PinnedShowcase() {
         <header className="mb-12  w-full text-start">
           <p className="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-cyan">
             <span className="text-text-muted">04</span>
-            <span className="h-px w-8 bg-gradient-to-r from-cyan to-transparent" />
+            <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
             {process.eyebrow}
           </p>
           <AnimatedHeading
             text={process.title}
-            className="font-[family-name:var(--font-geist)] text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+            className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
           />
         </header>
 
@@ -103,7 +103,7 @@ export function PinnedShowcase() {
               className="glass group relative flex w-full flex-col justify-between overflow-hidden rounded-2xl p-8 md:h-[52vh] md:w-[68vw] lg:w-[46vw]"
             >
               <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-electric/10 blur-3xl transition-opacity duration-500 group-hover:opacity-100 md:opacity-0" />
-              <span className="font-[family-name:var(--font-geist)] text-6xl font-semibold text-white/10">
+              <span className="font-(family-name:--font-geist) text-6xl font-semibold text-white/10">
                 {p.step}
               </span>
               <div>
@@ -120,7 +120,7 @@ export function PinnedShowcase() {
 
         {/* Progress rail */}
         <div className="mt-10 hidden h-px w-full overflow-hidden bg-line md:block">
-          <div className="pin-rail-fill h-full w-full origin-left scale-x-0 bg-gradient-to-r from-electric via-cyan to-violet" />
+          <div className="pin-rail-fill h-full w-full origin-left scale-x-0 bg-linear-to-r from-electric via-cyan to-violet" />
         </div>
       </div>
     </section>

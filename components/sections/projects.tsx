@@ -37,7 +37,7 @@ export function Projects() {
                   href={localePath(locale, `/work/${slug}`)}
                   className="group block h-full"
                 >
-                  <article className="glass relative flex h-full flex-col overflow-hidden rounded-2xl p-7 [transform:translateZ(0)]">
+                  <article className="glass relative flex h-full flex-col overflow-hidden rounded-2xl p-7 transform-[translateZ(0)]">
                     <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-electric/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                     <div className="mb-5 flex items-start justify-between gap-4">
@@ -65,7 +65,7 @@ export function Projects() {
                           key={h}
                           className="flex gap-2.5 text-sm leading-relaxed text-text-secondary"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-electric to-violet" />
+                          <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-linear-to-br from-electric to-violet" />
                           {h}
                         </li>
                       ))}

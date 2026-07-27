@@ -12,10 +12,10 @@ import { AmbientBackground } from "@/components/background/ambient-background";
 import { ParticleField } from "@/components/background/particle-field";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/ui/text-reveal";
-import { STACK } from "@/lib/content";
+import { PROFILE, STACK } from "@/lib/content";
 import { useDictionary, useI18n } from "@/lib/i18n/context";
-import GlitchCanvas from "../ui/GlitchCanvas";
 import { localePath } from "@/lib/work";
+import Image from "next/image";
 
 export function Hero() {
   const { hero, profile } = useDictionary();
@@ -31,10 +31,6 @@ export function Hero() {
   const sy = useSpring(py, { stiffness: 60, damping: 18, mass: 0.6 });
 
   // Parallax depth layers
-  // const portraitX = useTransform(sx, [-0.5, 0.5], [-22, 22]);
-  // const portraitY = useTransform(sy, [-0.5, 0.5], [-16, 16]);
-  // const portraitRotX = useTransform(sy, [-0.5, 0.5], [8, -8]);
-  // const portraitRotY = useTransform(sx, [-0.5, 0.5], [-10, 10]);
   const haloX = useTransform(sx, [-0.5, 0.5], [30, -30]);
   const haloY = useTransform(sy, [-0.5, 0.5], [24, -24]);
   const glowX = useTransform(sx, [-0.5, 0.5], [-40, 40]);
@@ -168,13 +164,29 @@ export function Hero() {
                 <div className=" absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] animate-spin-slow" />
                 <div className="absolute  inset-0.75 rounded-full bg-void/80 backdrop-blur-sm overflow-hidden ">
                   {/* Active Portrait */}
-                  <div className="relative flex justify-center ">
-                    <GlitchCanvas
-                      width={410}
-                      height={660}
-                      isActive={true}
-                      imageUrl={"/portrait.png"}
-                    />
+                  <div className="relative h-full w-full flex justify-center ">
+                    {/* DisabledPortrait */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 10, scale: 1 }}
+                      transition={{
+                        duration: 1.1,
+                        delay: 3.3,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      className="relative z-10 h-full w-full overflow-hidden"
+                    >
+                      <Image
+                        src="/portrait.png"
+                        alt={`${PROFILE.name} — ${profile.role}`}
+                        fill
+                        priority
+                        sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
+                        className="object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
+                      />
+                      {/* Rim / key light */}
+                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
+                    </motion.div>
                   </div>
                 </div>
                 <div className="absolute inset-0 rounded-full border border-white/10 " />
