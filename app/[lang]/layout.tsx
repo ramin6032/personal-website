@@ -16,6 +16,7 @@ import {
   localeOpenGraph,
   type Locale,
 } from "@/lib/i18n/config";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -123,6 +124,7 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
     >
       <body className="bg-void font-sans antialiased">
+        <Analytics />
         <I18nProvider locale={locale} dict={dict}>
           <PageTransition />
           <ScrollProgress />
