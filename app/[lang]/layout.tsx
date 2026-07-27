@@ -17,6 +17,7 @@ import {
   type Locale,
 } from "@/lib/i18n/config";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -125,6 +126,7 @@ export default async function LocaleLayout({
     >
       <body className="bg-void font-sans antialiased">
         <Analytics />
+        <SpeedInsights />
         <I18nProvider locale={locale} dict={dict}>
           <PageTransition />
           <ScrollProgress />
