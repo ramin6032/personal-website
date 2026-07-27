@@ -24,11 +24,11 @@ const fa: Dictionary = {
   },
   nav: {
     links: [
-      { href: "#about", label: "درباره من" },
-      { href: "#skills", label: "مهارت‌ها" },
-      { href: "#experience", label: "تجربه" },
+      { href: "/fa#about", label: "درباره من" },
+      { href: "/fa#skills", label: "مهارت‌ها" },
+      { href: "/fa#experience", label: "تجربه" },
       { href: "/fa/work", label: "پروژه‌ها" },
-      { href: "#contact", label: "تماس" },
+      { href: "/fa#contact", label: "تماس" },
     ],
     cta: "ارتباط با من",
   },

@@ -13,13 +13,16 @@ import { ParticleField } from "@/components/background/particle-field";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/ui/text-reveal";
 import { STACK } from "@/lib/content";
-import { useDictionary } from "@/lib/i18n/context";
+import { useDictionary, useI18n } from "@/lib/i18n/context";
 import GlitchCanvas from "../ui/GlitchCanvas";
+import { localePath } from "@/lib/work";
 
 export function Hero() {
   const { hero, profile } = useDictionary();
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
+
+  const { locale } = useI18n();
 
   // Normalised pointer position (-0.5 → 0.5)
   const px = useMotionValue(0);
@@ -96,7 +99,7 @@ export function Hero() {
           >
             <Magnetic strength={0.5}>
               <a
-                href="#projects"
+                href={localePath(locale, "/work")}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-electric px-7 py-3.5 text-sm font-semibold text-white transition-shadow duration-300 hover:shadow-[0_0_40px_-4px] hover:shadow-electric/60"
               >
                 <span className="relative z-10">{hero.primaryCta}</span>

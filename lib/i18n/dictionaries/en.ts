@@ -24,11 +24,11 @@ const en: Dictionary = {
   },
   nav: {
     links: [
-      { href: "#about", label: "About" },
-      { href: "#skills", label: "Skills" },
-      { href: "#experience", label: "Experience" },
+      { href: "/en#about", label: "About" },
+      { href: "/en#skills", label: "Skills" },
+      { href: "/en#experience", label: "Experience" },
       { href: "/en/work", label: "Projects" },
-      { href: "#contact", label: "Contact" },
+      { href: "/en#contact", label: "Contact" },
     ],
     cta: "Let's talk",
   },
