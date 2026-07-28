@@ -4,7 +4,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { Magnetic } from "@/components/ui/magnetic";
 import { AmbientBackground } from "@/components/background/ambient-background";
 import { PROFILE } from "@/lib/content";
-import { useDictionary } from "@/lib/i18n/context";
+import { useDictionary, useLocale } from "@/lib/i18n/context";
+import ScrollFloat from "../ui/ScrollFloat";
 
 /**
  * Contact — the closing beat. A centered, high-contrast call to action set
@@ -13,7 +14,7 @@ import { useDictionary } from "@/lib/i18n/context";
  */
 export function Contact() {
   const { contact } = useDictionary();
-
+  const locale = useLocale();
   return (
     <section
       id="contact"
@@ -31,12 +32,24 @@ export function Contact() {
           <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
         </Reveal>
 
-        <Reveal
-          direction={"down"}
-          className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-        >
-          {contact.title}
-        </Reveal>
+        {locale ? (
+          <Reveal
+            direction={"down"}
+            className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+          >
+            {contact.title}
+          </Reveal>
+        ) : (
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+          >
+            {contact.title}
+          </ScrollFloat>
+        )}
 
         <Reveal
           direction="up"

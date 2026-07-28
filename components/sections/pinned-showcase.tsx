@@ -3,6 +3,7 @@
 import { useGsap } from "@/lib/hooks/use-gsap";
 import { useDictionary, useLocale } from "@/lib/i18n/context";
 import { Reveal } from "../ui/reveal";
+import ScrollFloat from "../ui/ScrollFloat";
 
 /**
  * PinnedShowcase — the flagship scroll-storytelling beat. The section pins
@@ -92,12 +93,24 @@ export function PinnedShowcase() {
             {process.eyebrow}
           </p>
 
-          <Reveal
-            direction={locale === "fa" ? "left" : "right"}
-            className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-          >
-            {process.title}
-          </Reveal>
+          {locale === "fa" ? (
+            <Reveal
+              direction={"right"}
+              className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+            >
+              {process.title}
+            </Reveal>
+          ) : (
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              {process.title}
+            </ScrollFloat>
+          )}
         </header>
 
         {/* Horizontal track (translated by GSAP on desktop) */}

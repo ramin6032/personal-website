@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 import type { ReactNode } from "react";
 import { useLocale } from "@/lib/i18n/context";
+import ScrollFloat from "../ui/ScrollFloat";
 
 /**
  * Section — consistent section shell so every block opens with the same
@@ -45,12 +46,24 @@ export function Section({
           {eyebrow}
         </Reveal>
 
-        <Reveal
-          direction={locale === "fa" ? "left" : "right"}
-          className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-        >
-          {title}
-        </Reveal>
+        {locale === "fa" ? (
+          <Reveal
+            direction={"left"}
+            className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+          >
+            {title}
+          </Reveal>
+        ) : (
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+          >
+            {title}
+          </ScrollFloat>
+        )}
 
         {lede && (
           <Reveal

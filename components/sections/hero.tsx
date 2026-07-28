@@ -12,10 +12,10 @@ import { AmbientBackground } from "@/components/background/ambient-background";
 import { ParticleField } from "@/components/background/particle-field";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TextReveal } from "@/components/ui/text-reveal";
-import { PROFILE, STACK } from "@/lib/content";
+import { STACK } from "@/lib/content";
 import { useDictionary, useI18n } from "@/lib/i18n/context";
 import { localePath } from "@/lib/work";
-import Image from "next/image";
+import GlitchCanvas from "../ui/GlitchCanvas";
 
 export function Hero() {
   const { hero, profile } = useDictionary();
@@ -167,20 +167,14 @@ export function Hero() {
                 <div className=" absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] animate-spin-slow" />
                 <div className="absolute inset-0.75 rounded-full  bg-void/80 backdrop-blur-sm overflow-hidden">
                   {/* Active Portrait */}
-                  <div className="relative h-full w-full flex justify-center">
-                    {/* DisabledPortrait */}
-
-                    <Image
-                      src="/portrait.png"
-                      alt={`${PROFILE.name} — ${profile.role}`}
-                      fill
-                      priority
-                      sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
-                      className="object-contain object-bottom z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)] rounded-full pt-8 "
-                      quality={90}
+                  <div className="relative h-full w-full flex justify-center overflow-hidden">
+                    {/* Portrait with effect */}
+                    <GlitchCanvas
+                      width={410}
+                      height={660}
+                      isActive={true}
+                      imageUrl={"/portrait.png"}
                     />
-                    {/* Rim / key light */}
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
                   </div>
                 </div>
                 <div className="absolute inset-0 rounded-full border border-white/10 " />
@@ -192,7 +186,7 @@ export function Hero() {
               aria-hidden
               className="absolute inset-0 -z-10 flex items-center justify-center"
             >
-              <div className="h-[104%] w-[104%] rounded-full border border-cyan/20 animate-spin-slow [animation-duration:34s]" />
+              <div className="h-[104%] w-[104%] rounded-full border border-cyan/20 animate-spin-slow  [animation-duration:34s]" />
               <div className="absolute h-[118%] w-[118%] rounded-full border border-violet/10 animate-spin-slow [animation-direction:reverse] [animation-duration:46s]" />
             </div>
 
@@ -200,19 +194,19 @@ export function Hero() {
             {/* <FloatingChip
               className="left-[-8%] top-[18%]"
               delay={1.3}
-              label="Next.js · TypeScript"
+              label="Next.js"
             />
 
             <FloatingChip
               className="right-[-10%] top-[38%]"
               delay={1.5}
-              label="Enterprise Systems"
+              label="React"
             />
 
             <FloatingChip
               className="bottom-[14%] left-[-4%] "
               delay={1.7}
-              label="+18k Users"
+              label="TypeScript"
             /> */}
 
             {/* Ground reflection */}

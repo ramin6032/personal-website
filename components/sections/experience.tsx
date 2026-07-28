@@ -23,7 +23,7 @@ export function Experience() {
     >
       <div className="relative pl-8 sm:pl-12">
         {/* Animated spine */}
-        <div className="absolute left-[7px] top-2 h-[calc(100%-1rem)] sm:left-[11px]">
+        <div className="absolute left-1.75 top-2 h-[calc(100%-1rem)] sm:left-2.75">
           <DrawLine orientation="vertical" className="h-full" />
         </div>
 
@@ -31,7 +31,7 @@ export function Experience() {
           {experience.roles.map((role, i) => (
             <li key={`${role.role}-${role.org}`} className="relative">
               {/* Node */}
-              <span className="absolute -start-8 top-1.5 flex h-4 w-4 items-center justify-center sm:-start-12">
+              <span className="absolute -inset-s-8 top-1.5 flex h-4 w-4 items-center justify-center sm:-inset-s-12">
                 <span className="absolute h-4 w-4 rounded-full bg-electric/30 blur-[2px]" />
                 <span className="relative h-2.5 w-2.5 rounded-full bg-electric ring-2 ring-void" />
               </span>
@@ -62,7 +62,7 @@ export function Experience() {
                       key={h}
                       className="flex gap-2.5 text-sm leading-relaxed text-text-secondary"
                     >
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-electric to-violet" />
+                      <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-linear-to-br from-electric to-violet" />
                       {h}
                     </li>
                   ))}
