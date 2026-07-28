@@ -28,9 +28,9 @@ export function AmbientBackground({
       {/* Aurora mesh blobs */}
       {aurora && (
         <>
-          <div className="absolute left-[-10%] top-[-15%] h-[55vh] w-[55vh] rounded-full bg-electric/25 blur-[120px] animate-aurora" />
-          <div className="absolute right-[-8%] top-[10%] h-[50vh] w-[50vh] rounded-full bg-violet/25 blur-[130px] animate-aurora [animation-delay:-6s]" />
-          <div className="absolute bottom-[-20%] left-[30%] h-[45vh] w-[45vh] rounded-full bg-cyan/20 blur-[120px] animate-aurora [animation-delay:-11s]" />
+          <div className="absolute  md:hidden left-[-10%] top-[-15%] h-[55vh] w-[55vh] rounded-full bg-electric/25 blur-[15px] " />
+          <div className="absolute hidden md:block  ltr:right-[-8%] rtl:left-[-8%] top-[10%] h-[50vh] w-[50vh] rounded-full bg-violet/25 blur-[130px] animate-aurora [animation-delay:-6s]" />
+          <div className="absolute  bottom-[-10%] md:bottom-[-20%] left-[5%] md:left-[30%] md:rtl:right-[30%] h-[45vh] w-[45vh] rounded-full bg-cyan/25 md:bg-cyan/20 blur-[15px] md:blur-[120px] md:animate-aurora md:[animation-delay:-11s]" />
         </>
       )}
 

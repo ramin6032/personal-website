@@ -24,6 +24,9 @@ export function Hero() {
 
   const { locale } = useI18n();
 
+  const isTouchDevice =
+    typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
+
   // Normalised pointer position (-0.5 → 0.5)
   const px = useMotionValue(0);
   const py = useMotionValue(0);
@@ -37,7 +40,7 @@ export function Hero() {
   const glowY = useTransform(sy, [-0.5, 0.5], [-30, 30]);
 
   const handlePointer = (e: React.MouseEvent) => {
-    if (reduce || !sectionRef.current) return;
+    if (reduce || !sectionRef.current || isTouchDevice) return;
     const rect = sectionRef.current.getBoundingClientRect();
     px.set((e.clientX - rect.left) / rect.width - 0.5);
     py.set((e.clientY - rect.top) / rect.height - 0.5);
@@ -160,33 +163,24 @@ export function Hero() {
               style={{ x: haloX, y: haloY }}
               className="absolute inset-0 z-10 flex items-center justify-center"
             >
-              <div className="relative h-[86%] w-[86%]">
+              <div className="relative h-[86%] w-[86%] ">
                 <div className=" absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(34,211,238,0.55),transparent_35%,rgba(139,92,246,0.55),transparent_70%)] opacity-70 blur-[2px] animate-spin-slow" />
-                <div className="absolute  inset-0.75 rounded-full bg-void/80 backdrop-blur-sm overflow-hidden ">
+                <div className="absolute inset-0.75 rounded-full  bg-void/80 backdrop-blur-sm overflow-hidden">
                   {/* Active Portrait */}
-                  <div className="relative h-full w-full flex justify-center ">
+                  <div className="relative h-full w-full flex justify-center">
                     {/* DisabledPortrait */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 40, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 10, scale: 1 }}
-                      transition={{
-                        duration: 1.1,
-                        delay: 3.3,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                      className="relative z-10 h-full w-full overflow-hidden"
-                    >
-                      <Image
-                        src="/portrait.png"
-                        alt={`${PROFILE.name} — ${profile.role}`}
-                        fill
-                        priority
-                        sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
-                        className="object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
-                      />
-                      {/* Rim / key light */}
-                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
-                    </motion.div>
+
+                    <Image
+                      src="/portrait.png"
+                      alt={`${PROFILE.name} — ${profile.role}`}
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
+                      className="object-contain object-bottom z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)] rounded-full pt-8 "
+                      quality={90}
+                    />
+                    {/* Rim / key light */}
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_70%_30%,rgba(120,170,255,0.18),transparent_70%)] mix-blend-screen" />
                   </div>
                 </div>
                 <div className="absolute inset-0 rounded-full border border-white/10 " />
@@ -203,7 +197,7 @@ export function Hero() {
             </div>
 
             {/* Floating tech chips */}
-            <FloatingChip
+            {/* <FloatingChip
               className="left-[-8%] top-[18%]"
               delay={1.3}
               label="Next.js · TypeScript"
@@ -219,7 +213,7 @@ export function Hero() {
               className="bottom-[14%] left-[-4%] "
               delay={1.7}
               label="+18k Users"
-            />
+            /> */}
 
             {/* Ground reflection */}
             <div

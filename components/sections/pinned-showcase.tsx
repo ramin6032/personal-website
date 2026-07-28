@@ -1,8 +1,8 @@
 "use client";
 
 import { useGsap } from "@/lib/hooks/use-gsap";
-import { AnimatedHeading } from "@/components/ui/animated-heading";
-import { useDictionary } from "@/lib/i18n/context";
+import { useDictionary, useLocale } from "@/lib/i18n/context";
+import { Reveal } from "../ui/reveal";
 
 /**
  * PinnedShowcase — the flagship scroll-storytelling beat. The section pins
@@ -76,6 +76,8 @@ export function PinnedShowcase() {
     );
   });
 
+  const locale = useLocale();
+
   return (
     <section
       id="process"
@@ -89,10 +91,13 @@ export function PinnedShowcase() {
             <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
             {process.eyebrow}
           </p>
-          <AnimatedHeading
-            text={process.title}
+
+          <Reveal
+            direction={locale === "fa" ? "left" : "right"}
             className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-          />
+          >
+            {process.title}
+          </Reveal>
         </header>
 
         {/* Horizontal track (translated by GSAP on desktop) */}

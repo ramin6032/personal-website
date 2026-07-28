@@ -51,11 +51,11 @@ export function Reveal({
 
   return (
     <MotionTag
-      className={cn(className)}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ ...inViewport, once }}
       transition={{ duration, delay, ease: EASE_OUT_EXPO }}
+      className={cn(className)}
     >
       {children}
     </MotionTag>

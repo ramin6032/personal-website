@@ -1,7 +1,6 @@
 "use client";
 
 import { Reveal } from "@/components/ui/reveal";
-import { AnimatedHeading } from "@/components/ui/animated-heading";
 import { Magnetic } from "@/components/ui/magnetic";
 import { AmbientBackground } from "@/components/background/ambient-background";
 import { PROFILE } from "@/lib/content";
@@ -32,10 +31,12 @@ export function Contact() {
           <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
         </Reveal>
 
-        <AnimatedHeading
-          text={contact.title}
-          className="text-center font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-        />
+        <Reveal
+          direction={"down"}
+          className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+        >
+          {contact.title}
+        </Reveal>
 
         <Reveal
           direction="up"

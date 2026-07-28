@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   experimental: {
     useTypeScriptCli: true,
   },
+  allowedDevOrigins: ["192.168.70.70"],
 };
 
 export default nextConfig;

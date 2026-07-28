@@ -12,9 +12,7 @@ export default function LogoLoader({ onComplete }: LogoLoaderProps) {
 
   useEffect(() => {
     const timeline = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2750));
-
-      await new Promise((resolve) => setTimeout(resolve, 850));
+      await new Promise((resolve) => setTimeout(resolve, 5000));
       setIsVisible(false);
       onComplete?.();
     };

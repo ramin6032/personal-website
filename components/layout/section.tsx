@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { AnimatedHeading } from "@/components/ui/animated-heading";
 import { Reveal } from "@/components/ui/reveal";
 import type { ReactNode } from "react";
+import { useLocale } from "@/lib/i18n/context";
 
 /**
  * Section — consistent section shell so every block opens with the same
@@ -26,6 +26,7 @@ export function Section({
   children?: ReactNode;
   className?: string;
 }) {
+  const locale = useLocale();
   return (
     <section
       id={id}
@@ -40,14 +41,16 @@ export function Section({
           className="mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-cyan"
         >
           {index && <span className="text-text-muted">{index}</span>}
-          <span className="h-px w-8 bg-gradient-to-r from-cyan to-transparent" />
+          <span className="h-px w-8 bg-linear-to-r from-cyan to-transparent" />
           {eyebrow}
         </Reveal>
 
-        <AnimatedHeading
-          text={title}
-          className="font-[family-name:var(--font-geist)] text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
-        />
+        <Reveal
+          direction={locale === "fa" ? "left" : "right"}
+          className="font-(family-name:--font-geist) text-3xl font-semibold leading-[1.1] tracking-tight text-text-primary sm:text-4xl lg:text-5xl"
+        >
+          {title}
+        </Reveal>
 
         {lede && (
           <Reveal
