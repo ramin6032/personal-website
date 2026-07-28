@@ -58,7 +58,7 @@ export function Hero() {
       </div>
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
-        {/* -------- Left: copy -------- */}
+        {/* -------- Left -------- */}
         <div className="relative z-10 order-2 text-center lg:order-1 lg:text-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -190,25 +190,6 @@ export function Hero() {
               <div className="absolute h-[118%] w-[118%] rounded-full border border-violet/10 animate-spin-slow [animation-direction:reverse] [animation-duration:46s]" />
             </div>
 
-            {/* Floating tech chips */}
-            {/* <FloatingChip
-              className="left-[-8%] top-[18%]"
-              delay={1.3}
-              label="Next.js"
-            />
-
-            <FloatingChip
-              className="right-[-10%] top-[38%]"
-              delay={1.5}
-              label="React"
-            />
-
-            <FloatingChip
-              className="bottom-[14%] left-[-4%] "
-              delay={1.7}
-              label="TypeScript"
-            /> */}
-
             {/* Ground reflection */}
             <div
               aria-hidden
@@ -250,29 +231,5 @@ export function Hero() {
         </span>
       </motion.a>
     </section>
-  );
-}
-
-function FloatingChip({
-  label,
-  className,
-  delay,
-}: {
-  label: string;
-  className?: string;
-  delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 10 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`glass absolute z-20 rounded-xl px-3 py-2 text-xs font-medium text-text-secondary shadow-lg shadow-black/40 ${className ?? ""}`}
-    >
-      <div className="animate-float-slow" dir="ltr">
-        <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-cyan align-middle" />
-        {label}
-      </div>
-    </motion.div>
   );
 }
