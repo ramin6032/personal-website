@@ -81,21 +81,11 @@ export function Hero() {
             </span>
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg lg:mx-0"
-          >
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg lg:mx-0">
             {hero.intro}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-9 flex flex-col items-center gap-4 sm:flex-row lg:items-start lg:justify-start"
-          >
+          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row lg:items-start lg:justify-start">
             <Magnetic strength={0.5}>
               <a
                 href={localePath(locale, "/work")}
@@ -117,15 +107,10 @@ export function Hero() {
                 {hero.secondaryCta}
               </a>
             </Magnetic>
-          </motion.div>
+          </div>
 
           {/* Stats */}
-          <motion.dl
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 grid max-w-md grid-cols-3 gap-6 lg:mx-0"
-          >
+          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 lg:mx-0">
             {hero.stats.map((s) => (
               <div key={s.label} className="text-center " dir="ltr">
                 <dt className="sr-only">{s.label}</dt>
@@ -139,7 +124,7 @@ export function Hero() {
                 </dd>
               </div>
             ))}
-          </motion.dl>
+          </dl>
         </div>
 
         {/* -------- Right: portrait composition -------- */}
@@ -214,12 +199,9 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.a
+      <a
         href="#about"
         aria-label={hero.scrollLabel}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
         className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-text-muted lg:left-10 lg:translate-x-0"
       >
         <span className="flex h-9 w-5 items-start justify-center rounded-full border border-line p-1">
@@ -229,7 +211,7 @@ export function Hero() {
             className="h-1.5 w-1 rounded-full bg-text-secondary"
           />
         </span>
-      </motion.a>
+      </a>
     </section>
   );
 }
