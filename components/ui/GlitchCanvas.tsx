@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import * as PIXI from "pixi.js";
+import { Application, Assets, Sprite, Texture } from "pixi.js";
 import { RGBSplitFilter, GlitchFilter } from "pixi-filters";
 
 interface GlitchCanvasProps {
@@ -18,15 +18,15 @@ export default function GlitchCanvas({
   imageUrl = "",
   isActive = true,
 }: GlitchCanvasProps) {
-  const appRef = useRef<PIXI.Application | null>(null);
-  const imgRef = useRef<PIXI.Sprite | null>(null);
+  const appRef = useRef<Application | null>(null);
+  const imgRef = useRef<Sprite | null>(null);
   const timelineRef = useRef<gsap.core.Timeline>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const initializeGlitch = async () => {
       try {
-        const app = new PIXI.Application();
+        const app = new Application();
 
         await app.init({
           width,
@@ -40,16 +40,16 @@ export default function GlitchCanvas({
         appRef.current = app;
 
         // Load texture
-        const texture = await PIXI.Assets.load(imageUrl);
+        const texture = await Assets.load(imageUrl);
         setupImage(app, texture);
       } catch (error) {
         console.error("Error initializing glitch canvas:", error);
       }
     };
 
-    const setupImage = (app: PIXI.Application, texture: PIXI.Texture) => {
+    const setupImage = (app: Application, texture: Texture) => {
       try {
-        const img = PIXI.Sprite.from(texture);
+        const img = Sprite.from(texture);
 
         // Center image
         const maxWidth = app.screen.width * 0.8;
@@ -117,7 +117,7 @@ export default function GlitchCanvas({
     };
 
     const startAnimation = (
-      img: PIXI.Sprite,
+      img: Sprite,
       rgbSplitFilter: RGBSplitFilter,
       glitchFilter: GlitchFilter,
     ) => {
