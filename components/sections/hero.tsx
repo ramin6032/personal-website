@@ -154,12 +154,22 @@ export function Hero() {
                   {/* Active Portrait */}
                   <div className="relative h-full w-full flex justify-center overflow-hidden">
                     {/* Portrait with effect */}
-                    <GlitchCanvas
-                      width={410}
-                      height={660}
-                      isActive={true}
-                      imageUrl={"/portrait.png"}
-                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: 3.3,
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                    >
+                      <GlitchCanvas
+                        width={410}
+                        height={660}
+                        isActive={true}
+                        imageUrl={"/portrait.png"}
+                      />
+                    </motion.div>
                   </div>
                 </div>
                 <div className="absolute inset-0 rounded-full border border-white/10 " />
