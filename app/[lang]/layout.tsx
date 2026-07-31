@@ -75,7 +75,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      images: "/logo-indigo",
+      images: "/logo-indigo.svg",
       url: `${siteUrl}/${lang}`,
       title: meta.ogTitle,
       description: meta.ogDescription,
