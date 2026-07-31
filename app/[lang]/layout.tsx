@@ -37,7 +37,7 @@ const vazirmatn = Vazirmatn({
   display: "swap",
 });
 
-const siteUrl = "https://ramin.dev";
+const siteUrl = "https://ramin6032.vercel.app";
 
 /** Pre-render every locale at build time. */
 export function generateStaticParams() {
